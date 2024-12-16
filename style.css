@@ -1,0 +1,116 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: left; /* Centre le contenu horizontalement */
+    
+    margin: 0 auto 20px; /* Centre horizontalement avec `auto` et ajoute une marge en bas */
+    padding: 10px 15px; /* Espacement interne */
+    background-color:#61787F; /* Fond gris clair */
+    color: #ffffff; /* Couleur du texte en noir pour un bon contraste */
+    box-sizing: border-box; /* Inclut les paddings dans la largeur */
+    border: 2px solid #000; /* Ajout d'un cadre noir */
+}
+header img {
+    height: 150px;
+    margin-right: 50px;
+    max-width: 100%; /* Prévention des débordements */
+}
+header h1 {
+    font-family: Oswald;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 59.28px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+   
+}
+body {
+    font-family: 'Oswald', sans-serif; /* Police principale */
+    width: 80%; /* Limite la largeur du contenu à 80% de l'écran */
+    margin: 0 auto; /* Centre horizontalement le contenu */
+    padding: 0; /* Supprime tout espace par défaut */
+    box-sizing: border-box; /* Inclut les paddings et bordures dans la largeur */
+}
+
+h1 {
+    font-size: 70px;
+  }
+  
+
+#best-movie-img{
+    width: 500px;
+    margin-right: 50px;
+    max-width: 100%; /* Prévention des débordements */
+}
+/* Parent container */
+.parent {
+    display: flex; /* Utilise Flexbox pour une disposition horizontale */
+    align-items: stretch; /* Étire les enfants pour qu'ils aient la même hauteur */
+    gap: 20px; /* Espace entre l'image et le texte */
+    margin: 20px;
+    border: 10px solid #000000; /* Ajoute une bordure autour de div2 */
+}
+
+/* Image container */
+.div1 img {
+    max-width: 300px; /* Limit the image size */
+    height: auto; /* Maintain aspect ratio */
+    margin: 1rem;
+
+}
+
+/* Text container */
+.div2 {
+    flex: 1; /* Prend toute la largeur restante */
+    padding: 20px; /* Ajoute de l'espace intérieur */
+    display: flex; /* Active Flexbox pour organiser le contenu */
+    flex-direction: column; /* Empile les éléments verticalement */
+    gap: 10px; /* Espace entre les éléments (titre, description, bouton) */
+
+}
+
+.card-title {
+    font-size: 5rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    margin-top: auto; /* Positionne le bouton en bas de div2 */
+    margin-right: 50px; /* Ajoute un espace de 20px à droite */
+    margin-bottom: 40px; /* Ajoute un espace de 20px en bas */
+    font-size: 3rem; /* Augmente la taille de la police */
+    align-self: flex-end; /* Positionne le bouton à droite */
+    background-color: #ff0000; /* Fond rouge */
+    color: #ffffff; /* Texte blanc */
+    border: none; /* Supprime les bordures */
+    border-radius: 25px; /* Rend le bouton arrondi */
+    padding: 15px 30px; /* Ajoute plus de padding interne (vertical et horizontal) */
+    cursor: pointer; /* Change le curseur au survol */
+    transition: background-color 0.3s ease; /* Animation sur le changement de couleur */
+
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) { /* Réglages pour petits écrans */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header h1 {
+        font-size: 1.2rem;
+    }
+    header img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
