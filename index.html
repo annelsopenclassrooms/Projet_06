@@ -22,16 +22,18 @@
         <h1>Meilleur film</h1>
     </div>
 
-    <div class="parent">
-        <div class="div1">
-            <img id="best-movie-img" class="card-img-top" alt="Best Movie" src="placeholder.jpg" />
+
+        <div class="movie-card">
+            <div class="div1">
+                <img id="best-movie-img" class="card-img-top" alt="Best Movie" src="placeholder.jpg" />
+            </div>
+            <div class="div2">
+                <h2 id="best-movie-title" class="card-title">Loading...</h2>
+                <p id="best-movie-description" class="card-text">Fetching movie details...</p>
+                <button id="best-movie-details" class="btn btn-primary">Details</button>
+            </div>
         </div>
-        <div class="div2">
-            <h2 id="best-movie-title" class="card-title">Loading...</h2>
-            <p id="best-movie-description" class="card-text">Fetching movie details...</p>
-            <button id="best-movie-details" class="btn btn-primary">Details</button>
-        </div>
-    </div>
+
 
 
 
@@ -39,12 +41,16 @@
         <div>
             <h1>Films les mieux notés</h1>
         </div>
+        <div id="movies-container-1" class="movie-container"></div>
+
         <div>
             <h1>Science Fiction</h1>
         </div>
+        <div id="movies-container-2" class="movie-container"></div>
         <div>
             <h1>Policier</h1>
         </div>
+        <div id="movies-container-3" class="movie-container"></div>
         <div>
             <h1>Catégorie libre</h1>
         </div>

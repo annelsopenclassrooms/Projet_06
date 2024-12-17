@@ -38,19 +38,8 @@ h1 {
   }
   
 
-#best-movie-img{
-    width: 500px;
-    margin-right: 50px;
-    max-width: 100%; /* Prévention des débordements */
-}
-/* Parent container */
-.parent {
-    display: flex; /* Utilise Flexbox pour une disposition horizontale */
-    align-items: stretch; /* Étire les enfants pour qu'ils aient la même hauteur */
-    gap: 20px; /* Espace entre l'image et le texte */
-    margin: 20px;
-    border: 10px solid #000000; /* Ajoute une bordure autour de div2 */
-}
+
+
 
 /* Image container */
 .div1 img {
@@ -113,4 +102,84 @@ h1 {
         margin-right: 0;
         margin-bottom: 10px;
     }
+}
+
+
+/* Styles appliqués à tous les conteneurs de films */
+.movie-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Toujours 3 colonnes */
+    grid-template-rows: repeat(2, auto); /* Toujours 2 lignes */
+    grid-gap: 40px; /* Espacement entre les cartes */
+    margin: 20px auto; /* Marge autour du conteneur */
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px; /* Largeur maximale */
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Style pour chaque carte de film */
+.movie {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.movie:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.movie img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.movie-banner {
+    position: absolute;
+    top: 20%; /* Keep it higher in the image */
+    left: 0;
+    width: 100%; /* Exactly match the image width */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 1.5;
+    height: 130px;
+
+}
+
+.movie-banner h3 {
+    color: #fff;
+    margin: 0;
+    font-size: 2.5rem;
+    align-self: flex-start;
+    line-height: 1.2;
+}
+
+.movie-details-btn {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-end;
+    margin-top: auto;
+    font-size: 1.2rem;
+}
+
+.movie-banner button:hover {
+    background-color: #e64a19;
 }
