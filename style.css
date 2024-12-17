@@ -110,15 +110,13 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Toujours 3 colonnes */
     grid-template-rows: repeat(2, auto); /* Toujours 2 lignes */
-    grid-gap: 40px; /* Espacement entre les cartes */
-    margin: 20px auto; /* Marge autour du conteneur */
-    padding: 20px;
-    width: 90%;
-    max-width: 1200px; /* Largeur maximale */
+    grid-gap: 100px; /* Espacement entre les cartes */
+
+    width: 100%;
+
     box-sizing: border-box;
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+
+
 }
 
 /* Style pour chaque carte de film */

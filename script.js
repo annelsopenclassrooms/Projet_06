@@ -76,7 +76,11 @@ function fetchBestMoviesByGenreWithMinVotes(genre, minVotes = 1000000, targetMov
                     return response.json();
                 })
                 .then(data => {
-                    const filteredMovies = data.results.filter(movie => movie.votes >= minVotes);
+                    const filteredMovies = data.results.filter(movie => {
+                        const votes = Number(movie.votes); // Convert votes to a number
+                        return votes >= minVotes;
+                    });
+
                     movies = movies.concat(filteredMovies);
 
                     // Check if there is another page
@@ -100,6 +104,7 @@ function fetchBestMoviesByGenreWithMinVotes(genre, minVotes = 1000000, targetMov
         fetchNextPage(); // Start fetching the first page
     });
 }
+
 
 
 
@@ -161,6 +166,56 @@ function fetchGenres() {
 
 
 
+
+
+function displayBestMovies(movies) {
+    const moviesContainer = document.getElementById('movies-container');
+    if (!moviesContainer) {
+        console.error("Movies container element not found.");
+        return;
+    }
+
+    // Clear the container before appending new content
+    moviesContainer.innerHTML = "";
+
+    // Fetch detailed information for each movie
+    const detailPromises = movies.map(movie => fetchMovieDetails(movie.id));
+
+    Promise.all(detailPromises)
+        .then(detailedMovies => {
+            // Loop through each detailed movie and display it
+            detailedMovies.forEach(movie => {
+                const movieDiv = document.createElement('div');
+                movieDiv.classList.add('movie');
+
+                const movieImage = document.createElement('img');
+                movieImage.src = movie.image_url || "placeholder.jpg"; // Use a placeholder image if none exists
+                movieDiv.appendChild(movieImage);
+
+                // Create a banner div to contain title and button
+                const movieBanner = document.createElement('div');
+                movieBanner.classList.add('movie-banner');
+
+                const movieTitle = document.createElement('h3');
+                movieTitle.textContent = movie.original_title || "Title not available";
+                movieBanner.appendChild(movieTitle);
+
+                const detailsButton = document.createElement('button');
+                detailsButton.textContent = 'Details';
+                detailsButton.classList.add('movie-details-btn');
+                detailsButton.onclick = () => {
+                    alert(`Details for: ${movie.original_title}\n\nDescription: ${movie.description}`);
+                };
+                movieBanner.appendChild(detailsButton);
+
+                movieDiv.appendChild(movieBanner);
+                moviesContainer.appendChild(movieDiv);
+            });
+        })
+        .catch(error => {
+            console.error("Error fetching detailed movie information:", error);
+        });
+}
 
 
 function displayFirstMovie(movies) {
@@ -272,24 +327,40 @@ function displayMovies(movies, containerId) {
         });
 }
 
+function loadAndDisplayMovies() {
+    // Fetch movies with the specified minimum votes
+    fetchBestMoviesWithMinVotes(1000000, 6)
+        .then(movies => {
+            // Display the fetched movies
+            displayMovies(movies, "movies-container-1");
+
+            // Display the first movie
+            displayFirstMovie(movies);
+        })
+        .catch(error => {
+            console.error("Error in loadAndDisplayMovies execution:", error);
+        });
+
+    fetchBestMoviesByGenreWithMinVotes("Sci-Fi")
+        .then(movies => {
+            // Display the fetched movies
+            displayMovies(movies, "movies-container-2");
+        })
+        .catch(error => {
+            console.error("Error in loadAndDisplayMovies execution:", error);
+        });
+
+    fetchBestMoviesByGenreWithMinVotes("Action")
+        .then(movies => {
+            // Display the fetched movies
+            displayMovies(movies, "movies-container-3");
+        })
+        .catch(error => {
+            console.error("Error in loadAndDisplayMovies execution:", error);
+        });
+}
 
 
 
 
-
-console.log(`liste genre ${fetchGenres()}...`);
-
-console.log(`LIste scifi  ${fetchBestMoviesByGenreWithMinVotes("Sci-Fi")}...`);
-
-
-fetchBestMoviesWithMinVotes(1000000, 6).then(movies => {
-    displayMovies(movies, "movies-container-1");
-});
-
-fetchBestMoviesByGenreWithMinVotes("Sci-Fi", 6).then(movies => {
-    displayMovies(movies, "movies-container-2");
-});
-
-fetchBestMoviesByGenreWithMinVotes("Action", 6).then(movies => {
-    displayMovies(movies, "movies-container-3");
-});
+loadAndDisplayMovies();
