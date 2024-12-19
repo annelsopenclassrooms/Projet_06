@@ -18,12 +18,49 @@
     </header>
 
 
+
+
+
+    <!-- Fenêtre modale -->
+    <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="movieModalLabel">Titre du film</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="movie-modal-img" src="" alt="Movie Image" class="img-fluid mb-3">
+                    <p><strong>Genres :</strong> <span id="movie-modal-genres"></span></p>
+                    <p><strong>Date de sortie :</strong> <span id="movie-modal-release-date"></span></p>
+                    <p><strong>Classification :</strong> <span id="movie-modal-rating"></span></p>
+                    <p><strong>Score IMDB :</strong> <span id="movie-modal-imdb-score"></span></p>
+                    <p><strong>Réalisateur :</strong> <span id="movie-modal-director"></span></p>
+                    <p><strong>Acteurs :</strong> <span id="movie-modal-actors"></span></p>
+                    <p><strong>Durée :</strong> <span id="movie-modal-duration"></span></p>
+                    <p><strong>Pays d'origine :</strong> <span id="movie-modal-country"></span></p>
+                    <p><strong>Recettes au box-office :</strong> <span id="movie-modal-box-office"></span></p>
+                    <p><strong>Résumé :</strong> <span id="movie-modal-summary"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
     <div>
         <h1>Meilleur film</h1>
     </div>
 
-
-        <div class="movie-card">
+              <div class="movie-card">
             <div class="div1">
                 <img id="best-movie-img" class="card-img-top" alt="Best Movie" src="placeholder.jpg" />
             </div>
@@ -33,9 +70,6 @@
                 <button id="best-movie-details" class="btn btn-primary">Details</button>
             </div>
         </div>
-
-
-
 
         </div>
         <div>
@@ -54,6 +88,34 @@
         <div>
             <h1>Catégorie libre</h1>
         </div>
+        <div>
+            <h1>Choisissez un Genre</h1>
+            <select id="genre-selector" class="form-select" aria-label="Sélection du genre">
+                <option value="" disabled selected>-- Sélectionnez un genre --</option>
+            </select>
+        </div>
+        
+        <!-- Conteneur pour les films du genre sélectionné -->
+        <div id="genre-movies-container" class="movie-container"></div>
+        <div id="genre-movies-container" class="movie-container">
+            <!-- Les films s'afficheront ici -->
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
 
 </body>
 </html>

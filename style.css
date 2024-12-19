@@ -27,7 +27,7 @@ header h1 {
 }
 body {
     font-family: 'Oswald', sans-serif; /* Police principale */
-    width: 80%; /* Limite la largeur du contenu à 80% de l'écran */
+    width: 50%; /* Limite la largeur du contenu à 80% de l'écran */
     margin: 0 auto; /* Centre horizontalement le contenu */
     padding: 0; /* Supprime tout espace par défaut */
     box-sizing: border-box; /* Inclut les paddings et bordures dans la largeur */
@@ -180,4 +180,43 @@ h1 {
 
 .movie-banner button:hover {
     background-color: #e64a19;
+}
+
+
+
+/* Style de la liste déroulante */
+#genre-selector {
+    width: 50%;
+    padding: 10px;
+    margin: 20px auto;
+    display: block;
+    font-size: 1.2rem;
+}
+
+/* Style pour le conteneur des films */
+#genre-movies-container {
+    margin-top: 20px;
+}
+
+
+
+#movie-modal {
+    display: none; /* Cache par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+    overflow: auto; /* Permet le défilement si le contenu dépasse */
+    z-index: 1000; /* Place la modale au-dessus des autres éléments */
+}
+
+body.modal-open {
+    overflow: hidden; /* Désactive le défilement de la page */
+}
+
+
+.modal-lg {
+    max-width: 50%; /* Adjust this to control the modal width */
 }
