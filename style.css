@@ -34,18 +34,26 @@ body {
 }
 
 h1 {
+    padding-top: 30px;
+    padding-bottom: 30px;
     font-size: 70px;
   }
   
 
-
+.movie-card {
+    display: flex; /* Active Flexbox */
+    flex-direction: row; /* Place .div1 à gauche et .div2 à droite */
+    align-items: center; /* Centre verticalement les éléments */
+    gap: 20px; /* Espace horizontal entre les deux divs */
+}
 
 
 /* Image container */
-.div1 img {
-    max-width: 300px; /* Limit the image size */
-    height: auto; /* Maintain aspect ratio */
-    margin: 1rem;
+
+.div1{
+    max-width: 500px; /* Augmente la taille maximale de l'image */
+    width: 100%; /* S'adapte à son conteneur */
+    height: auto; /* Conserve les proportions */
 
 }
 
@@ -197,26 +205,46 @@ h1 {
 #genre-movies-container {
     margin-top: 20px;
 }
+.modal-dialog.modal-xl {
+    max-width: 90%; /* Limiter la largeur maximale de la modale */
+}
 
+.modal-header {
+    background-color: #61787F;
+    color: #fff;
+    padding: 15px 20px;
+    border-bottom: 2px solid #000;
+}
 
+.modal-body {
+    display: flex;
+    flex-wrap: wrap; /* Assure que les éléments s'adaptent pour les petits écrans */
+    gap: 20px; /* Espacement entre l'image et les détails */
+}
 
-#movie-modal {
-    display: none; /* Cache par défaut */
-    position: fixed;
-    top: 0;
-    left: 0;
+#movie-modal-img {
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
-    overflow: auto; /* Permet le défilement si le contenu dépasse */
-    z-index: 1000; /* Place la modale au-dessus des autres éléments */
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
-body.modal-open {
-    overflow: hidden; /* Désactive le défilement de la page */
+.modal-content {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ajout d'une ombre douce */
+    border-radius: 10px; /* Angles légèrement arrondis */
+    overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    .modal-dialog.modal-xl {
+        max-width: 100%; /* Assurez-vous qu'elle s'ajuste aux petits écrans */
+    }
 
-.modal-lg {
-    max-width: 50%; /* Adjust this to control the modal width */
+    .modal-body {
+        flex-direction: column; /* Réorganise verticalement pour les écrans mobiles */
+    }
+
+    #movie-modal-img {
+        margin-bottom: 20px; /* Ajoute un espace en bas de l'image sur mobile */
+    }
 }

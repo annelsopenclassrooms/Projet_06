@@ -352,7 +352,7 @@ function openMovieModal(movieId) {
     fetchMovieDetails(movieId)
         .then(movie => {
             // Update modal content
-            document.getElementById("movieModalLabel").textContent = movie.title;
+            document.getElementById("movieModalLabel").textContent = movie.original_title;
             document.getElementById("movie-modal-img").src = movie.image_url || "placeholder.jpg";
             document.getElementById("movie-modal-genres").textContent = movie.genres.join(", ");
             document.getElementById("movie-modal-release-date").textContent = movie.date_published;

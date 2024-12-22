@@ -26,11 +26,15 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="movieModalLabel">Titre du film</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div>
+                        <h5 class="modal-title" id="movieModalLabel">Titre du film</h5>
+                    </div>
+                    <div>
+                        <img id="movie-modal-img" src="" alt="Movie Image" class="modal-img-top-right">
+                    </div>
                 </div>
+
                 <div class="modal-body">
-                    <img id="movie-modal-img" src="" alt="Movie Image" class="img-fluid mb-3">
                     <p><strong>Genres :</strong> <span id="movie-modal-genres"></span></p>
                     <p><strong>Date de sortie :</strong> <span id="movie-modal-release-date"></span></p>
                     <p><strong>Classification :</strong> <span id="movie-modal-rating"></span></p>
@@ -41,6 +45,7 @@
                     <p><strong>Pays d'origine :</strong> <span id="movie-modal-country"></span></p>
                     <p><strong>Recettes au box-office :</strong> <span id="movie-modal-box-office"></span></p>
                     <p><strong>Résumé :</strong> <span id="movie-modal-summary"></span></p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
             </div>
         </div>
