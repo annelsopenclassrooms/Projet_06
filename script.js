@@ -354,18 +354,24 @@ function openMovieModal(movieId) {
             // Update modal content
             document.getElementById("movieModalLabel").textContent = movie.original_title;
             document.getElementById("movie-modal-img").src = movie.image_url || "placeholder.jpg";
-            document.getElementById("movie-modal-genres").textContent = movie.genres.join(", ");
-            document.getElementById("movie-modal-release-date").textContent = movie.date_published;
-            document.getElementById("movie-modal-rating").textContent = movie.rated || "Non classé";
-            document.getElementById("movie-modal-imdb-score").textContent = movie.imdb_score;
+
+
+            const year = new Date(movie.date_published).getFullYear();
+            const genres = movie.genres.join(", "); // Suppose que movie.genres est un tableau
+            document.getElementById("movie-modal-release-date-genres").textContent = `${year} - ${genres}`;
+            
+            const countries = movie.countries.join(" / "); // Suppose que movie.countries est un tableau
+            document.getElementById("movie-modal-rated-duration-countries").textContent = `${movie.rated} - ${movie.duration} min (${countries})`;
+
+
+            document.getElementById("movie-modal-imdb-score").textContent = `IMDB Score: ${movie.imdb_score}/10`;
             document.getElementById("movie-modal-director").textContent = movie.directors.join(", ");
             document.getElementById("movie-modal-actors").textContent = movie.actors.join(", ");
-            document.getElementById("movie-modal-duration").textContent = `${movie.duration} minutes`;
-            document.getElementById("movie-modal-country").textContent = movie.countries.join(", ");
+
             document.getElementById("movie-modal-box-office").textContent = movie.worldwide_gross_income
                 ? `${movie.worldwide_gross_income} $`
                 : "Données non disponibles";
-            document.getElementById("movie-modal-summary").textContent = movie.description;
+            document.getElementById("movie-modal-summary").textContent = movie.long_description;
 
             // Show the modal
             const modalElement = document.getElementById("movieModal");

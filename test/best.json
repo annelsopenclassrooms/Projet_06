@@ -1,0 +1,30 @@
+{"count":4,"next":null,"previous":null,"results":[{"id":86969,"url":"http://localhost:8000/api/v1/titles/86969","imdb_url":"https://www.imdb.com/title/tt0086969/","title":"Birdy - Le ali della libertà","year":1984,"imdb_score":"7.3","votes":21385,"image_url":"https://m.media-amazon.com/images/M/MV5BNTVmZmQ3NzgtNDhlNi00NDY2LWFhN2YtMDRhOGY0M2U3ZTc4XkEyXkFqcGdeQXVyNjMwMjk0MTQ@._V1_UX182_CR0,0,182,268_AL_.jpg","directors":["Alan Parker"],"actors":["Bruno Kirby","Dolores Sage","Elizabeth Whitcraft","George Buck","James Santini","John Harkins","Karen Young","Marshall Bell","Matthew Modine","Maud Winchester","Nancy Fish","Nicolas Cage","Pat Ryan","Sandra Beall","Sandy Baron"],"writers":["Sandy Kroopf","William Wharton"],"genres":["Drama","War"]},
+{"id":111161,"url":"http://localhost:8000/api/v1/titles/111161","imdb_url":"https://www.imdb.com/title/tt0111161/","title":"Le ali della libertà","year":1994,"imdb_score":"9.3","votes":2315277,"image_url":"https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg","directors":["Frank Darabont"],"actors":["Bob Gunton","Brian Libby","Clancy Brown","David Proval","Gil Bellows","James Whitmore","Jeffrey DeMunn","Joseph Ragno","Jude Ciccolella","Larry Brandenburg","Mark Rolston","Morgan Freeman","Neil Giuntoli","Tim Robbins","William Sadler"],"writers":["Frank Darabont","Stephen King"],"genres":["Drama"]},{"id":3646946,"url":"http://localhost:8000/api/v1/titles/3646946","imdb_url":"https://www.imdb.com/title/tt3646946/","title":"L'attacco dei giganti - Il film - Parte 2: Le ali della libertà","year":2015,"imdb_score":"7.8","votes":838,"image_url":"https://m.media-amazon.com/images/M/MV5BYzUxYTI0MWQtNDBjMi00MzEyLWE2NTktODgzYTBkZTdlYmIxXkEyXkFqcGdeQXVyMjQ4OTA4MDU@._V1_UY268_CR0,0,182,268_AL_.jpg","directors":["Tetsurô Araki"],"actors":["Daisuke Ono","Hiro Shimono","Hiroshi Kamiya","Kishô Taniyama","Marina Inoue","Romi Pak","Ryôta Ôsaka","Shinji Kawada","Shiori Mikami","Susumu Chiba","Yoshimasa Hosoya","Yui Ishikawa","Yû Kobayashi","Yû Shimamura","Yûki Kaji"],"writers":["Hajime Isayama"],"genres":["Action","Animation","Fantasy"]},{"id":4294052,"url":"http://localhost:8000/api/v1/titles/4294052","imdb_url":"https://www.imdb.com/title/tt4294052/","title":"L'attacco dei giganti: il film - Parte II - Le ali della libertà","year":2015,"imdb_score":"4.8","votes":4367,"image_url":"https://m.media-amazon.com/images/M/MV5BYjU5ZThjMjgtOGExNi00ZmUzLWFiN2QtNTQ3YmYwN2ExNjU1XkEyXkFqcGdeQXVyNDQyNzIwNDQ@._V1_UY268_CR3,0,182,268_AL_.jpg","directors":["Shinji Higuchi"],"actors":["Ben Bryant","Erik Brown","Felecia Angelle","Haruka Miura","Haruma Miura","Hiroki Hasegawa","Jun Kunimura","Kanata Hongô","Kiko Mizuhara","Nana Seino","Nanami Sakuraba","Pierre Taki","Satomi Ishihara","Satoru Matsuo","Takahiro Miura"],"writers":["Hajime Isayama","Tomohiro Machiyama"],"genres":["Action","Adventure","Fantasy"]}]}
+
+
+{"id":111161,"url":"http://localhost:8000/api/v1/titles/111161",
+"title":"Le ali della libertà",
+"original_title":"The Shawshank Redemption",
+"year":1994,"date_published":"1995-02-10",
+"duration":142,
+"description":"Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."
+,"long_description":"Chronicles the experiences of a formerly successful banker as a prisoner in the gloomy jailhouse of Shawshank after being found guilty of a crime he did not commit. The film portrays the man's unique way of dealing with his new, torturous life; along the way he befriends a number of fellow prisoners, most notably a wise long-term inmate named Red.",
+"avg_vote":"9.3",
+"imdb_score":"9.3",
+"votes":2315277,
+"metascore":"80.0",
+"budget":25000000,
+"budget_currency":"USD",
+"usa_gross_income":28699976,
+"worldwide_gross_income":28815245,
+"reviews_from_users":8232,
+"reviews_from_critics":164,
+"image_url":"https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg",
+"actors":["Bob Gunton","Brian Libby","Clancy Brown","David Proval","Gil Bellows","James Whitmore","Jeffrey DeMunn","Joseph Ragno","Jude Ciccolella","Larry Brandenburg","Mark Rolston","Morgan Freeman","Neil Giuntoli","Tim Robbins","William Sadler"],
+"directors":["Frank Darabont"],
+"writers":["Frank Darabont","Stephen King"],
+"genres":["Drama"],
+"countries":["USA"],
+"languages":["English"],
+"rated":"R",
+"company":"Castle Rock Entertainment"}

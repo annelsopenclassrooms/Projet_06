@@ -23,11 +23,16 @@
 
     <!-- Fenêtre modale -->
     <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <div>
-                        <h5 class="modal-title" id="movieModalLabel">Titre du film</h5>
+                        <h1 class="modal-title" id="movieModalLabel">Titre du film</h5>
+                        <p><span id="movie-modal-release-date-genres">Année - Genres</h3>
+                        <p><span id="movie-modal-rated-duration-countries"></span></p>
+                        <p><span id="movie-modal-imdb-score"></span></p>
+                        <p><strong></strong>Réalisé par:</strong></p>
+                        <p><span id="movie-modal-director"></span></p>
                     </div>
                     <div>
                         <img id="movie-modal-img" src="" alt="Movie Image" class="modal-img-top-right">
@@ -35,31 +40,18 @@
                 </div>
 
                 <div class="modal-body">
-                    <p><strong>Genres :</strong> <span id="movie-modal-genres"></span></p>
-                    <p><strong>Date de sortie :</strong> <span id="movie-modal-release-date"></span></p>
-                    <p><strong>Classification :</strong> <span id="movie-modal-rating"></span></p>
-                    <p><strong>Score IMDB :</strong> <span id="movie-modal-imdb-score"></span></p>
-                    <p><strong>Réalisateur :</strong> <span id="movie-modal-director"></span></p>
-                    <p><strong>Acteurs :</strong> <span id="movie-modal-actors"></span></p>
-                    <p><strong>Durée :</strong> <span id="movie-modal-duration"></span></p>
-                    <p><strong>Pays d'origine :</strong> <span id="movie-modal-country"></span></p>
+                    
+
+                    <p><span id="movie-modal-summary"></span></p>
+                    <p>Avec:</p>
+                    <p><span id="movie-modal-actors"></span></p>
                     <p><strong>Recettes au box-office :</strong> <span id="movie-modal-box-office"></span></p>
-                    <p><strong>Résumé :</strong> <span id="movie-modal-summary"></span></p>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
 
     <div>
         <h1>Meilleur film</h1>

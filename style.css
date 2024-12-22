@@ -205,33 +205,33 @@ h1 {
 #genre-movies-container {
     margin-top: 20px;
 }
+
+
+
+
 .modal-dialog.modal-xl {
-    max-width: 90%; /* Limiter la largeur maximale de la modale */
+    max-width: 40%; /* Limiter la largeur maximale de la modale */
+    border-width: 5px;
+    font-size: 1.2rem;
 }
 
 .modal-header {
-    background-color: #61787F;
-    color: #fff;
-    padding: 15px 20px;
-    border-bottom: 2px solid #000;
+    font-size: 24px;
+
+
 }
 
-.modal-body {
-    display: flex;
-    flex-wrap: wrap; /* Assure que les éléments s'adaptent pour les petits écrans */
-    gap: 20px; /* Espacement entre l'image et les détails */
-}
+
 
 #movie-modal-img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
     object-fit: cover;
 }
 
 .modal-content {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ajout d'une ombre douce */
-    border-radius: 10px; /* Angles légèrement arrondis */
+
     overflow: hidden;
 }
 
@@ -242,6 +242,11 @@ h1 {
 
     .modal-body {
         flex-direction: column; /* Réorganise verticalement pour les écrans mobiles */
+    }
+
+    .modal-body p {
+        margin-bottom: 15px; /* Ajoute un espace après chaque paragraphe */
+        line-height: 1.5; /* Améliore la lisibilité en augmentant l'interligne */
     }
 
     #movie-modal-img {
