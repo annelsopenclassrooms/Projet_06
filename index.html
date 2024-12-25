@@ -26,15 +26,16 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div>
+                    <div class="modal-text">
                         <h1 class="modal-title" id="movieModalLabel">Titre du film</h5>
-                        <p><span id="movie-modal-release-date-genres">Année - Genres</h3>
-                        <p><span id="movie-modal-rated-duration-countries"></span></p>
-                        <p><span id="movie-modal-imdb-score"></span></p>
-                        <p><strong></strong>Réalisé par:</strong></p>
+                        <p><strong><span id="movie-modal-release-date-genres"></span></strong></p>
+                        <p><strong><span id="movie-modal-rated-duration-countries"></span></strong></p>
+                        <p><strong><span id="movie-modal-imdb-score"></span></strong></p>
+                        <p class="spaced-paragraph"><strong>Réalisé par:</strong></p>
+                        
                         <p><span id="movie-modal-director"></span></p>
                     </div>
-                    <div>
+                    <div class="modal-image">
                         <img id="movie-modal-img" src="" alt="Movie Image" class="modal-img-top-right">
                     </div>
                 </div>
@@ -43,16 +44,30 @@
                     
 
                     <p><span id="movie-modal-summary"></span></p>
-                    <p>Avec:</p>
-                    <p><span id="movie-modal-actors"></span></p>
+                    <div class="modal-actors">
+                        <p><strong>Avec:</strong></p>
+                        <p><span id="movie-modal-actors"></span></p>
+                    </div>
                     <p><strong>Recettes au box-office :</strong> <span id="movie-modal-box-office"></span></p>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary mx-auto modal-close-btn" data-bs-dismiss="modal" aria-label="Close">Fermer</button>
+                    </div>
+                    
+
+
                 </div>
                 
             </div>
         </div>
     </div>
 
+
+
+
+
+    
     <div>
         <h1>Meilleur film</h1>
     </div>
@@ -82,15 +97,18 @@
             <h1>Policier</h1>
         </div>
         <div id="movies-container-3" class="movie-container"></div>
-        <div>
-            <h1>Catégorie libre</h1>
-        </div>
-        <div>
+
+        <div class="dropdown-container">
             <h1>Choisissez un Genre</h1>
-            <select id="genre-selector" class="form-select" aria-label="Sélection du genre">
-                <option value="" disabled selected>-- Sélectionnez un genre --</option>
-            </select>
+            <div class="custom-dropdown">
+                <button class="dropdown-button">-- Sélectionnez un genre --</button>
+                <ul class="dropdown-options" id="genre-list"></ul>
+            </div>
         </div>
+        
+        <!-- Conteneur pour les films du genre sélectionné -->
+        <div id="genre-movies-container" class="movie-container"></div>
+        
         
         <!-- Conteneur pour les films du genre sélectionné -->
         <div id="genre-movies-container" class="movie-container"></div>

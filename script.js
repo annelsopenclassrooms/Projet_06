@@ -261,18 +261,25 @@ function displayMovies(movies, containerId) {
 
 
 
-// Fonction pour récupérer et remplir les genres dans la liste déroulante
 function populateGenreDropdown() {
-    const genreSelector = document.getElementById("genre-selector");
+    const genreList = document.getElementById("genre-list");
+    const dropdownButton = document.querySelector(".dropdown-button");
 
     fetchGenres()
         .then(genres => {
-            // Remplir la liste déroulante avec les genres
+            // Ajouter les genres à la liste déroulante
             genres.forEach(genre => {
-                const option = document.createElement("option");
-                option.value = genre.name; // La valeur de l'option sera le nom du genre
-                option.textContent = genre.name; // Texte visible de l'option
-                genreSelector.appendChild(option);
+                const li = document.createElement("li");
+                li.textContent = genre.name;
+                li.dataset.value = genre.name;
+                genreList.appendChild(li);
+
+                // Gestion du clic sur une option
+                li.addEventListener("click", () => {
+                    dropdownButton.textContent = genre.name; // Afficher le genre sélectionné
+                    genreList.parentNode.classList.remove("active"); // Masquer les options
+                    loadMoviesByGenre(genre.name); // Charger les films
+                });
             });
         })
         .catch(error => {
@@ -280,29 +287,44 @@ function populateGenreDropdown() {
         });
 }
 
-// Écouteur pour changer de genre et charger les films
-document.getElementById("genre-selector").addEventListener("change", (event) => {
-    const selectedGenre = event.target.value;
+// Gestion de l'ouverture/fermeture du menu déroulant
+document.querySelector(".dropdown-button").addEventListener("click", () => {
+    const dropdown = document.querySelector(".custom-dropdown");
+    dropdown.classList.toggle("active");
+});
+
+// Charger les genres à l'ouverture de la page
+document.addEventListener("DOMContentLoaded", populateGenreDropdown);
+
+function loadMoviesByGenre(selectedGenre) {
     const container = document.getElementById("genre-movies-container");
 
-    container.innerHTML = ""; // Nettoyer les résultats précédents
+    container.innerHTML = ""; // Vider les résultats précédents
 
     if (selectedGenre) {
         fetchBestMoviesByGenreWithMinVotes(selectedGenre, 10000, 6)
             .then(movies => {
-                displayMovies(movies, "genre-movies-container"); // Affiche les films sélectionnés
+                displayMovies(movies, "genre-movies-container");
             })
             .catch(error => {
                 console.error("Erreur lors de la récupération des films :", error);
                 container.innerHTML = "<p>Aucun film trouvé pour ce genre.</p>";
             });
     }
-});
+}
 
-// Charger la liste déroulante des genres dès que la page est prête
-document.addEventListener("DOMContentLoaded", () => {
-    populateGenreDropdown();
-});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function loadAndDisplayMovies() {
@@ -388,6 +410,17 @@ function openMovieModal(movieId) {
             alert("Impossible de charger les détails du film.");
         });
 }
+
+
+
+
+
+
+
+
+
+
+
 
 // Event listener for the "Details" buttons
 document.addEventListener("click", function (event) {

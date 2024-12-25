@@ -36,7 +36,7 @@ body {
 h1 {
     padding-top: 30px;
     padding-bottom: 30px;
-    font-size: 70px;
+    font-size: 2rem;
   }
   
 
@@ -45,22 +45,24 @@ h1 {
     flex-direction: row; /* Place .div1 à gauche et .div2 à droite */
     align-items: center; /* Centre verticalement les éléments */
     gap: 20px; /* Espace horizontal entre les deux divs */
+    border: 5px solid black;
 }
 
 
 /* Image container */
 
 .div1{
-    max-width: 500px; /* Augmente la taille maximale de l'image */
+    max-width: 200px; /* Augmente la taille maximale de l'image */
     width: 100%; /* S'adapte à son conteneur */
     height: auto; /* Conserve les proportions */
+    padding: 20px;
 
 }
 
 /* Text container */
 .div2 {
     flex: 1; /* Prend toute la largeur restante */
-    padding: 20px; /* Ajoute de l'espace intérieur */
+    padding-left: 10px; /* Ajoute de l'espace intérieur */
     display: flex; /* Active Flexbox pour organiser le contenu */
     flex-direction: column; /* Empile les éléments verticalement */
     gap: 10px; /* Espace entre les éléments (titre, description, bouton) */
@@ -68,26 +70,28 @@ h1 {
 }
 
 .card-title {
-    font-size: 5rem;
+    padding-top: 20px;
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
 .card-text {
-    font-size: 3rem;
+    font-size: 1rem;
     margin-bottom: 20px;
+    padding-right: 20px
 }
 
 .btn {
     margin-top: auto; /* Positionne le bouton en bas de div2 */
-    margin-right: 50px; /* Ajoute un espace de 20px à droite */
-    margin-bottom: 40px; /* Ajoute un espace de 20px en bas */
-    font-size: 3rem; /* Augmente la taille de la police */
+    margin-right: 20px; /* Ajoute un espace de 20px à droite */
+    margin-bottom: 20px; /* Ajoute un espace de 20px en bas */
+    font-size: 1rem; /* Augmente la taille de la police */
     align-self: flex-end; /* Positionne le bouton à droite */
     background-color: #ff0000; /* Fond rouge */
     color: #ffffff; /* Texte blanc */
     border: none; /* Supprime les bordures */
-    border-radius: 25px; /* Rend le bouton arrondi */
-    padding: 15px 30px; /* Ajoute plus de padding interne (vertical et horizontal) */
+    border-radius: 10px; /* Rend le bouton arrondi */
+    padding: 10px 10px; /* Ajoute plus de padding interne (vertical et horizontal) */
     cursor: pointer; /* Change le curseur au survol */
     transition: background-color 0.3s ease; /* Animation sur le changement de couleur */
 
@@ -118,7 +122,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Toujours 3 colonnes */
     grid-template-rows: repeat(2, auto); /* Toujours 2 lignes */
-    grid-gap: 100px; /* Espacement entre les cartes */
+    grid-gap: 80px; /* Espacement entre les cartes */
 
     width: 100%;
 
@@ -161,29 +165,29 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
     line-height: 1.5;
-    height: 130px;
+    height: 80px;
 
 }
 
 .movie-banner h3 {
     color: #fff;
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 0.5rem;
     align-self: flex-start;
     line-height: 1.2;
 }
 
 .movie-details-btn {
-    background-color: #ff0000;
+    background-color: #6c6c6c;
     color: #ffffff;
     border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
+    border-radius: 5px;
+    padding: 5px 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     align-self: flex-end;
     margin-top: auto;
-    font-size: 1.2rem;
+    font-size: 0.5rem;
 }
 
 .movie-banner button:hover {
@@ -191,49 +195,165 @@ h1 {
 }
 
 
+/* Conteneur pour aligner le titre et le menu déroulant */
+.dropdown-container {
+    display: flex;
+    align-items: center; /* Aligner verticalement au centre */
+    gap: 20px; /* Espacement entre le titre et le menu déroulant */
+}
 
-/* Style de la liste déroulante */
-#genre-selector {
-    width: 50%;
+/* Style pour le titre */
+.dropdown-container h1 {
+    margin: 0; /* Supprime le margin par défaut */
+    font-size: 20px; /* Taille personnalisée pour s'adapter au menu */
+}
+
+/* Menu déroulant personnalisé */
+.custom-dropdown {
+    position: relative;
+    width: 300px;
+}
+
+.dropdown-button {
+    width: 100%;
     padding: 10px;
-    margin: 20px auto;
-    display: block;
-    font-size: 1.2rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
 }
 
-/* Style pour le conteneur des films */
-#genre-movies-container {
-    margin-top: 20px;
+.dropdown-options {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 10;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto; /* Ajoute un défilement si trop d'options */
 }
+
+/* Options avec lignes noires */
+.dropdown-options li {
+    padding: 10px;
+    border-bottom: 3px solid black;
+    cursor: pointer;
+}
+
+/* Retirer la bordure noire pour le dernier élément */
+.dropdown-options li:last-child {
+    border-bottom: none;
+}
+
+/* Effet au survol */
+.dropdown-options li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Afficher la liste déroulante active */
+.custom-dropdown.active .dropdown-options {
+    display: block;
+}
+
+
+
 
 
 
 
 .modal-dialog.modal-xl {
-    max-width: 40%; /* Limiter la largeur maximale de la modale */
-    border-width: 5px;
-    font-size: 1.2rem;
+    max-width: 50%; /* Limiter la largeur maximale de la modale */
+    border: 5px
 }
+
+
+
+
 
 .modal-header {
-    font-size: 24px;
+    display: flex;
+    justify-content: space-between; /* Place le texte à gauche et l'image à droite */
+    align-items: flex-start; /* Aligne les deux éléments en haut */
+    padding: 20px;
+    border-bottom: none; /* Supprime la ligne entre le header et le body */
+}
 
+.modal-text {
+    text-align: left; /* Aligne tout le texte à gauche */
+    flex: 1; /* Prend l'espace disponible */
+    line-height: 1; /* Réduit les espaces entre les lignes */
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime tout padding éventuel */
+    border-bottom: none; /* Supprime la ligne entre le header et le body */
+}
 
+.spaced-paragraph {
+    margin-top: 100px; /* Ajoute un espace au-dessus */
+}
+
+.modal-actors{
+    margin-top: 100px; /* Ajoute un espace au-dessus */
+    font-size: 0.5rem;
+    border-bottom: none; /* Supprime la ligne entre le header et le body */
 }
 
 
-
-#movie-modal-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+.modal-image img {
+    width: 300px !important;
+    height: auto !important;
+    object-fit: cover !important;
 }
 
 .modal-content {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ajout d'une ombre douce */
-
     overflow: hidden;
+    font-size: 1rem;
+    border-bottom: none; /* Supprime la ligne entre le header et le body */
+    border: 5px solid black;
 }
+
+
+
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    border-bottom: none;
+    border-top: none; /* Enlève la bordure supérieure du footer */
+}
+
+
+
+.modal-body hr {
+    display: none;
+}
+
+
+
+
+
+
+.modal-close-btn {
+    background-color: #ff0000; /* Fond rouge comme le bouton des détails */
+    color: #ffffff; /* Texte blanc */
+    border: none; /* Pas de bordure */
+    border-radius: 25px; /* Coins arrondis */
+    padding: 5px 5px; /* Espacement interne */
+    font-size: 1rem; /* Taille de la police */
+    cursor: pointer; /* Curseur pointeur au survol */
+    transition: background-color 0.3s ease; /* Animation au survol */
+}
+
+.modal-close-btn:hover {
+    background-color: #e64a19; /* Couleur plus foncée au survol */
+}
+
+
 
 @media (max-width: 768px) {
     .modal-dialog.modal-xl {
