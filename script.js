@@ -187,25 +187,7 @@ function displayFirstMovie(movies) {
 }
 
 
-function fetchMovieDetails(movieId) {
-    const url = `http://localhost:8000/api/v1/titles/${movieId}`;
-    
-    return new Promise((resolve, reject) => {
-        fetch(url)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP Error: ${response.status}`);
-                }
-                return response.json(); // Parse the JSON response
-            })
-            .then(data => {
-                resolve(data); // Resolve the promise with the movie details
-            })
-            .catch(error => {
-                reject(error); // Reject the promise in case of an error
-            });
-    });
-}
+
 function displayMovies(movies, containerId) {
     const moviesContainer = document.getElementById(containerId);
     if (!moviesContainer) {
@@ -365,7 +347,6 @@ function loadAndDisplayMovies() {
 
 
 
-
 function fetchMovieDetails(movieId) {
     const url = `http://localhost:8000/api/v1/titles/${movieId}`;
     
@@ -403,10 +384,15 @@ function openMovieModal(movieId) {
             const modal = new bootstrap.Modal(modalElement);
             modal.show();
 
-            // Nettoyer le backdrop correctement après la fermeture de la modale
-            modalElement.addEventListener('hidden.bs.modal', () => {
-                document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove());
-            }, { once: true });
+            document.getElementById("movieModal").addEventListener('hidden.bs.modal', () => {
+                // Vérifie et supprime les backdrops restants
+                const backdrops = document.querySelectorAll('.modal-backdrop');
+                backdrops.forEach(backdrop => backdrop.remove());
+            
+                // Réinitialise la classe de scroll sur le <body>
+                document.body.classList.remove('modal-open');
+                document.body.style.overflow = ''; // Réinitialise le style overflow
+            });
         })
         .catch(error => {
             console.error("Erreur lors de la récupération des détails du film :", error);
@@ -424,18 +410,3 @@ document.addEventListener("click", function (event) {
 
 // Charger et afficher les films au chargement de la page
 document.addEventListener("DOMContentLoaded", loadAndDisplayMovies);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-loadAndDisplayMovies();
