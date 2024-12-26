@@ -366,41 +366,44 @@ function loadAndDisplayMovies() {
 
 
 
-
-
+function fetchMovieDetails(movieId) {
+    const url = `http://localhost:8000/api/v1/titles/${movieId}`;
+    
+    return fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP Error: ${response.status}`);
+            }
+            return response.json();
+        });
+}
 
 function openMovieModal(movieId) {
-    // Fetch the movie details
     fetchMovieDetails(movieId)
         .then(movie => {
-            // Update modal content
             document.getElementById("movieModalLabel").textContent = movie.original_title;
             document.getElementById("movie-modal-img").src = movie.image_url || "placeholder.jpg";
 
-
             const year = new Date(movie.date_published).getFullYear();
-            const genres = movie.genres.join(", "); // Suppose que movie.genres est un tableau
+            const genres = movie.genres.join(", ");
             document.getElementById("movie-modal-release-date-genres").textContent = `${year} - ${genres}`;
             
-            const countries = movie.countries.join(" / "); // Suppose que movie.countries est un tableau
+            const countries = movie.countries.join(" / ");
             document.getElementById("movie-modal-rated-duration-countries").textContent = `${movie.rated} - ${movie.duration} min (${countries})`;
-
 
             document.getElementById("movie-modal-imdb-score").textContent = `IMDB Score: ${movie.imdb_score}/10`;
             document.getElementById("movie-modal-director").textContent = movie.directors.join(", ");
             document.getElementById("movie-modal-actors").textContent = movie.actors.join(", ");
-
             document.getElementById("movie-modal-box-office").textContent = movie.worldwide_gross_income
                 ? `${movie.worldwide_gross_income} $`
                 : "Données non disponibles";
             document.getElementById("movie-modal-summary").textContent = movie.long_description;
 
-            // Show the modal
             const modalElement = document.getElementById("movieModal");
             const modal = new bootstrap.Modal(modalElement);
             modal.show();
 
-            // Event listener to remove backdrop when modal is hidden
+            // Nettoyer le backdrop correctement après la fermeture de la modale
             modalElement.addEventListener('hidden.bs.modal', () => {
                 document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove());
             }, { once: true });
@@ -411,17 +414,6 @@ function openMovieModal(movieId) {
         });
 }
 
-
-
-
-
-
-
-
-
-
-
-
 // Event listener for the "Details" buttons
 document.addEventListener("click", function (event) {
     if (event.target && event.target.matches("button[data-id]")) {
@@ -429,6 +421,10 @@ document.addEventListener("click", function (event) {
         openMovieModal(movieId);
     }
 });
+
+// Charger et afficher les films au chargement de la page
+document.addEventListener("DOMContentLoaded", loadAndDisplayMovies);
+
 
 
 

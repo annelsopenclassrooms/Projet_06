@@ -23,7 +23,22 @@ header h1 {
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-   
+
+@media (max-width: 768px) { /* Réglages pour petits écrans */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header h1 {
+        font-size: 1.2rem;
+    }
+    header img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+
 }
 body {
     font-family: 'Oswald', sans-serif; /* Police principale */
@@ -102,19 +117,7 @@ h1 {
 }
 
 
-@media (max-width: 768px) { /* Réglages pour petits écrans */
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    header h1 {
-        font-size: 1.2rem;
-    }
-    header img {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-}
+
 
 
 /* Styles appliqués à tous les conteneurs de films */
@@ -130,6 +133,28 @@ h1 {
 
 
 }
+
+@media (max-width: 768px) { /* Réglages pour petits écrans */
+/* Styles appliqués à tous les conteneurs de films */
+    .movie-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Toujours 3 colonnes */
+        grid-template-rows: repeat(3, auto); /* Toujours 2 lignes */
+        grid-gap: 80px; /* Espacement entre les cartes */
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+
+    }
+}
+
+
+
+
+
+
 
 /* Style pour chaque carte de film */
 .movie {
@@ -265,16 +290,10 @@ h1 {
 
 
 
-
-
 .modal-dialog.modal-xl {
     max-width: 50%; /* Limiter la largeur maximale de la modale */
-    border: 5px
+    border: 5px solid black;
 }
-
-
-
-
 
 .modal-header {
     display: flex;
@@ -297,12 +316,11 @@ h1 {
     margin-top: 100px; /* Ajoute un espace au-dessus */
 }
 
-.modal-actors{
+.modal-actors {
     margin-top: 100px; /* Ajoute un espace au-dessus */
     font-size: 0.5rem;
     border-bottom: none; /* Supprime la ligne entre le header et le body */
 }
-
 
 .modal-image img {
     width: 300px !important;
@@ -314,11 +332,7 @@ h1 {
     overflow: hidden;
     font-size: 1rem;
     border-bottom: none; /* Supprime la ligne entre le header et le body */
-    border: 5px solid black;
 }
-
-
-
 
 .modal-footer {
     display: flex;
@@ -327,16 +341,9 @@ h1 {
     border-top: none; /* Enlève la bordure supérieure du footer */
 }
 
-
-
 .modal-body hr {
     display: none;
 }
-
-
-
-
-
 
 .modal-close-btn {
     background-color: #ff0000; /* Fond rouge comme le bouton des détails */
@@ -353,23 +360,19 @@ h1 {
     background-color: #e64a19; /* Couleur plus foncée au survol */
 }
 
-
-
+/* Media query pour tablette */
 @media (max-width: 768px) {
-    .modal-dialog.modal-xl {
-        max-width: 100%; /* Assurez-vous qu'elle s'ajuste aux petits écrans */
+    .modal-header {
+        flex-direction: column; /* Empile le texte et l'image en colonne */
+        align-items: center; /* Centre les éléments horizontalement */
     }
 
-    .modal-body {
-        flex-direction: column; /* Réorganise verticalement pour les écrans mobiles */
+    .modal-image {
+        align-self: center; /* Centre l'image horizontalement */
+        margin-top: 20px; /* Ajoute un espace au-dessus de l'image */
     }
 
-    .modal-body p {
-        margin-bottom: 15px; /* Ajoute un espace après chaque paragraphe */
-        line-height: 1.5; /* Améliore la lisibilité en augmentant l'interligne */
-    }
-
-    #movie-modal-img {
-        margin-bottom: 20px; /* Ajoute un espace en bas de l'image sur mobile */
+    .modal-text {
+        text-align: center; /* Centre le texte */
     }
 }
