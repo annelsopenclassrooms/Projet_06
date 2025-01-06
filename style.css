@@ -37,7 +37,23 @@ header h1 {
         margin-bottom: 10px;
     }
 }
+@media (max-width: 480px) {
+    header {
+        justify-content: center; /* Centre horizontalement le contenu si Flexbox est utilisé */
+        text-align: center; /* Centrage du texte et des éléments inline-block */
+    }
 
+    header h1 {
+        display: none; /* Cache le titre sur les smartphones */
+    }
+
+    header img {
+        display: block; /* Permet d'appliquer margin: auto */
+        margin: 0 auto; /* Centre l'image horizontalement */
+        height: auto; /* Ajuste la hauteur automatiquement */
+        max-width: 100px; /* Limite la largeur maximale de l'image */
+    }
+}
 
 }
 body {
@@ -54,6 +70,19 @@ h1 {
     font-size: 2rem;
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .movie-card {
     display: flex; /* Active Flexbox */
@@ -115,6 +144,63 @@ h1 {
 .btn:hover {
     background-color: #0056b3;
 }
+
+
+
+
+/* Media query pour les smartphones */
+@media (max-width: 480px) {
+    .movie-card {
+        flex-direction: column; /* Réorganise les éléments en colonne */
+        align-items: center; /* Centre les éléments horizontalement */
+        gap: 0; /* Supprime tout espacement entre les éléments */
+    }
+
+    .div1 {
+        max-width: 100%; /* L'image prend toute la largeur du conteneur */
+        height: 300px; /* Fixe une hauteur maximale de 300px */
+        padding: 0; /* Supprime le padding autour de l'image */
+        box-sizing: border-box; /* Inclut le padding dans la dimension globale */
+    }
+
+    .div1 img {
+        width: 100%; /* L'image s'adapte à la largeur du conteneur */
+        height: 141px; /* L'image remplit toute la hauteur disponible */
+        object-fit: cover; /* Coupe les parties haute et basse pour remplir le conteneur */
+        object-position: center; /* Centre le contenu de l'image (horizontalement et verticalement) */
+        border-radius: 10px; /* Ajoute des coins arrondis pour un design agréable */
+        padding: 20px
+    }
+
+    .div2 {
+        padding: 0 10px; /* Ajoute un peu d'espace horizontal autour du texte */
+        text-align: center; /* Centre le texte pour un meilleur rendu sur mobile */
+    }
+
+    .card-title {
+        font-size: 1.5rem; /* Réduit légèrement la taille du titre sur mobile */
+        margin: 0; /* Supprime toute marge autour du titre */
+    }
+
+    .card-text {
+        font-size: 1rem;
+        margin-top: 10px; /* Ajoute un léger espacement seulement en haut de la description */
+        margin-bottom: 10px; /* Réduit l'espacement en bas */
+    }
+
+    .btn {
+        align-self: center; /* Centre le bouton horizontalement */
+        margin: 20px auto 0; /* Ajuste les marges pour un meilleur rendu */
+    }
+}
+
+
+
+
+
+
+
+
 
 
 
