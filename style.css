@@ -2,7 +2,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: left; /* Centre le contenu horizontalement */
-    
     margin: 0 auto 20px; /* Centre horizontalement avec `auto` et ajoute une marge en bas */
     padding: 10px 15px; /* Espacement interne */
     background-color:#61787F; /* Fond gris clair */
@@ -10,6 +9,7 @@ header {
     box-sizing: border-box; /* Inclut les paddings dans la largeur */
     border: 2px solid #000; /* Ajout d'un cadre noir */
 }
+
 header img {
     height: 150px;
     margin-right: 50px;
@@ -23,21 +23,28 @@ header h1 {
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
+}
 
-@media (max-width: 768px) { /* Réglages pour petits écrans */
+
+
+@media (max-width: 1024px) { /* For tablets */
     header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row; /* Reverse the order: image on the right */
+        align-items: center; /* Vertically align the items */
     }
     header h1 {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Adjust the font size */
     }
     header img {
-        margin-right: 0;
-        margin-bottom: 10px;
+        margin-left: 0px; /* Add space between the title and the image */
+        margin-bottom: 0; /* Remove any bottom margin */
     }
 }
-@media (max-width: 480px) {
+
+
+
+
+@media (max-width: 768px) {
     header {
         justify-content: center; /* Centre horizontalement le contenu si Flexbox est utilisé */
         text-align: center; /* Centrage du texte et des éléments inline-block */
@@ -55,7 +62,7 @@ header h1 {
     }
 }
 
-}
+
 body {
     font-family: 'Oswald', sans-serif; /* Police principale */
     width: 50%; /* Limite la largeur du contenu à 80% de l'écran */
@@ -70,19 +77,6 @@ h1 {
     font-size: 2rem;
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .movie-card {
     display: flex; /* Active Flexbox */
@@ -134,7 +128,7 @@ h1 {
     background-color: #ff0000; /* Fond rouge */
     color: #ffffff; /* Texte blanc */
     border: none; /* Supprime les bordures */
-    border-radius: 10px; /* Rend le bouton arrondi */
+    border-radius: 25px; /* Rend le bouton arrondi */
     padding: 10px 10px; /* Ajoute plus de padding interne (vertical et horizontal) */
     cursor: pointer; /* Change le curseur au survol */
     transition: background-color 0.3s ease; /* Animation sur le changement de couleur */
@@ -149,7 +143,7 @@ h1 {
 
 
 /* Media query pour les smartphones */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .movie-card {
         flex-direction: column; /* Réorganise les éléments en colonne */
         align-items: center; /* Centre les éléments horizontalement */
@@ -158,23 +152,22 @@ h1 {
 
     .div1 {
         max-width: 100%; /* L'image prend toute la largeur du conteneur */
-        height: 300px; /* Fixe une hauteur maximale de 300px */
+
         padding: 0; /* Supprime le padding autour de l'image */
         box-sizing: border-box; /* Inclut le padding dans la dimension globale */
     }
 
     .div1 img {
         width: 100%; /* L'image s'adapte à la largeur du conteneur */
-        height: 141px; /* L'image remplit toute la hauteur disponible */
+        height: 300px;
         object-fit: cover; /* Coupe les parties haute et basse pour remplir le conteneur */
         object-position: center; /* Centre le contenu de l'image (horizontalement et verticalement) */
-        border-radius: 10px; /* Ajoute des coins arrondis pour un design agréable */
-        padding: 20px
+        padding: 10px
     }
 
     .div2 {
         padding: 0 10px; /* Ajoute un peu d'espace horizontal autour du texte */
-        text-align: center; /* Centre le texte pour un meilleur rendu sur mobile */
+        text-align: left; /* Centre le texte pour un meilleur rendu sur mobile */
     }
 
     .card-title {
@@ -191,20 +184,9 @@ h1 {
     .btn {
         align-self: center; /* Centre le bouton horizontalement */
         margin: 20px auto 0; /* Ajuste les marges pour un meilleur rendu */
+        margin-bottom: 10px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Styles appliqués à tous les conteneurs de films */
 .movie-container {
@@ -220,12 +202,12 @@ h1 {
 
 }
 
-@media (max-width: 768px) { /* Réglages pour petits écrans */
+@media (max-width: 1024px) { /* Réglages pour petits écrans */
 /* Styles appliqués à tous les conteneurs de films */
     .movie-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Toujours 3 colonnes */
-        grid-template-rows: repeat(3, auto); /* Toujours 2 lignes */
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(3, auto); 
         grid-gap: 80px; /* Espacement entre les cartes */
 
         width: 100%;
@@ -235,6 +217,22 @@ h1 {
 
     }
 }
+
+@media (max-width: 768px) { /* Réglages pour petits écrans */
+    /* Styles appliqués à tous les conteneurs de films */
+        .movie-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); 
+            grid-template-rows: repeat(6, auto); 
+            grid-gap: 50px; /* Espacement entre les cartes */
+    
+            width: 100%;
+    
+            box-sizing: border-box;
+    
+    
+        }
+    }
 
 
 
@@ -388,18 +386,32 @@ h1 {
     border-bottom: none; /* Supprime la ligne entre le header et le body */
 }
 
+.modal-title {
+    padding-top: 0; /* Supprime le padding */
+    padding-bottom: 0; /* Supprime le padding */
+
+}
+
+
+
 .modal-text {
     text-align: left; /* Aligne tout le texte à gauche */
     flex: 1; /* Prend l'espace disponible */
-    line-height: 1; /* Réduit les espaces entre les lignes */
+
     margin: 0; /* Supprime les marges par défaut */
     padding: 0; /* Supprime tout padding éventuel */
     border-bottom: none; /* Supprime la ligne entre le header et le body */
 }
-
 .spaced-paragraph {
-    margin-top: 100px; /* Ajoute un espace au-dessus */
+    margin-top: 30px; /* Ajoute un espace au-dessus */
 }
+
+.modal-text p {
+    margin: 0; /* Supprime les marges autour des paragraphes */
+    padding: 0; /* Supprime tout éventuel padding */
+
+}
+
 
 .modal-actors {
     margin-top: 100px; /* Ajoute un espace au-dessus */
@@ -408,9 +420,9 @@ h1 {
 }
 
 .modal-image img {
-    width: 300px !important;
-    height: auto !important;
-    object-fit: cover !important;
+    width: 200px;
+    height: auto;
+    object-fit: cover;
 }
 
 .modal-content {
@@ -445,8 +457,8 @@ h1 {
     background-color: #e64a19; /* Couleur plus foncée au survol */
 }
 
-/* Media query pour tablette */
-@media (max-width: 768px) {
+/* Media query for tablets and smarthphones */
+@media (max-width: 1024px) {
     .modal-header {
         flex-direction: column; /* Empile le texte et l'image en colonne */
         align-items: center; /* Centre les éléments horizontalement */
@@ -461,3 +473,4 @@ h1 {
         text-align: center; /* Centre le texte */
     }
 }
+

@@ -32,42 +32,39 @@
 
 
 
-<!-- Fenêtre modale -->
-<div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-text">
-                    <h1 class="modal-title" id="movieModalLabel">Titre du film</h1>
-                    <p><strong><span id="movie-modal-release-date-genres"></span></strong></p>
-                    <p><strong><span id="movie-modal-rated-duration-countries"></span></strong></p>
-                    <p><strong><span id="movie-modal-imdb-score"></span></strong></p>
-                    <p class="spaced-paragraph"><strong>Réalisé par:</strong></p>
-                    <p><span id="movie-modal-director"></span></p>
+    <!-- Fenêtre modale -->
+    <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-text">
+                        <h1 class="modal-title" id="movieModalLabel">Titre du film</h1>
+                        <p><strong><span id="movie-modal-release-date-genres"></span></strong></p>
+                        <p><strong><span id="movie-modal-rated-duration-countries"></span></strong></p>
+                        <p><strong><span id="movie-modal-imdb-score"></span></strong></p>
+                        <p><strong>Recettes au box-office :</strong> <span id="movie-modal-box-office"></span></p>
+                        <p class="spaced-paragraph"><br><strong>Réalisé par:</strong></p>
+                        <p><span id="movie-modal-director"></span></p>
+                    </div>
+                    <div class="modal-image">
+                        <img id="movie-modal-img" src="" alt="Movie Image" class="modal-img-top-right">
+                    </div>
                 </div>
-                <div class="modal-image">
-                    <img id="movie-modal-img" src="" alt="Movie Image" class="modal-img-top-right">
+                <div class="modal-body">
+                    <p><span id="movie-modal-summary"></span></p>
+                    <div class="modal-actors">
+                        <p><strong>Avec:</strong></p>
+                        <p><span id="movie-modal-actors"></span></p>
+                    </div>
+                    <p><strong>Recettes au box-office :</strong> <span id="movie-modal-box-office"></span></p>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary mx-auto modal-close-btn" data-bs-dismiss="modal" aria-label="Close">Fermer</button>
+                    </div>
+                    
                 </div>
-            </div>
-            <div class="modal-body">
-                <p><span id="movie-modal-summary"></span></p>
-                <div class="modal-actors">
-                    <p><strong>Avec:</strong></p>
-                    <p><span id="movie-modal-actors"></span></p>
-                </div>
-                <p><strong>Recettes au box-office :</strong> <span id="movie-modal-box-office"></span></p>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary mx-auto modal-close-btn" data-bs-dismiss="modal" aria-label="Close">Fermer</button>
-                </div>
-                
             </div>
         </div>
     </div>
-</div>
-
-
-
-
 
     
     <div>
@@ -118,21 +115,7 @@
             <!-- Les films s'afficheront ici -->
         </div>
 
+   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-</body>
+    </body>
 </html>

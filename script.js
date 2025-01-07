@@ -210,6 +210,13 @@ function displayMovies(movies, containerId) {
 
                 const movieImage = document.createElement('img');
                 movieImage.src = movie.image_url || "placeholder.jpg"; // Use a placeholder image if none exists
+
+                // Make the image clickable by adding a click event
+                movieImage.classList.add('clickable'); // Add a class for styling (optional)
+                movieImage.addEventListener('click', () => {
+                    openMovieModal(movie.id); // Open the modal with movie details
+                });
+
                 movieDiv.appendChild(movieImage);
 
                 // Create a banner div to contain title and button
@@ -239,6 +246,7 @@ function displayMovies(movies, containerId) {
             console.error("Error fetching detailed movie information:", error);
         });
 }
+
 
 
 
@@ -376,8 +384,8 @@ function openMovieModal(movieId) {
             document.getElementById("movie-modal-director").textContent = movie.directors.join(", ");
             document.getElementById("movie-modal-actors").textContent = movie.actors.join(", ");
             document.getElementById("movie-modal-box-office").textContent = movie.worldwide_gross_income
-                ? `${movie.worldwide_gross_income} $`
-                : "Données non disponibles";
+            ? `${new Intl.NumberFormat('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(movie.worldwide_gross_income / 1_000_000)} millions $`
+            : "Données non disponibles";
             document.getElementById("movie-modal-summary").textContent = movie.long_description;
 
             const modalElement = document.getElementById("movieModal");
