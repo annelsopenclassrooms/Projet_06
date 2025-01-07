@@ -411,11 +411,15 @@ h1 {
     padding: 0; /* Supprime tout éventuel padding */
 
 }
+.modal-body p {
+    margin: 0; /* Supprime les marges autour des paragraphes */
+    padding: 0; /* Supprime tout éventuel padding */
 
+}
 
 .modal-actors {
-    margin-top: 100px; /* Ajoute un espace au-dessus */
-    font-size: 0.5rem;
+    margin-top: 10px; /* Ajoute un espace au-dessus */
+    font-size: 0.8rem;
     border-bottom: none; /* Supprime la ligne entre le header et le body */
 }
 
@@ -434,6 +438,8 @@ h1 {
 .modal-footer {
     display: flex;
     justify-content: center;
+    align-items: center; /* Centre verticalement */
+    margin-top: 10px; /* Ajoute un espace au-dessus */
     border-bottom: none;
     border-top: none; /* Enlève la bordure supérieure du footer */
 }
@@ -447,10 +453,12 @@ h1 {
     color: #ffffff; /* Texte blanc */
     border: none; /* Pas de bordure */
     border-radius: 25px; /* Coins arrondis */
-    padding: 5px 5px; /* Espacement interne */
+    padding: 5px 50px; /* Espacement interne */
     font-size: 1rem; /* Taille de la police */
     cursor: pointer; /* Curseur pointeur au survol */
     transition: background-color 0.3s ease; /* Animation au survol */
+    display: inline-block;
+    margin: 0;  /* Supprime toute marge par défaut */
 }
 
 .modal-close-btn:hover {
