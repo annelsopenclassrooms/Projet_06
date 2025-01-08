@@ -371,7 +371,9 @@ function openMovieModal(movieId) {
     fetchMovieDetails(movieId)
         .then(movie => {
             document.getElementById("movieModalLabel").textContent = movie.original_title;
-            document.getElementById("movie-modal-img").src = movie.image_url || "placeholder.jpg";
+            document.querySelectorAll(".modal-image img").forEach(image => {
+                image.src = movie.image_url || "placeholder.jpg";
+            });
 
             const year = new Date(movie.date_published).getFullYear();
             const genres = movie.genres.join(", ");

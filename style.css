@@ -392,8 +392,6 @@ h1 {
 
 }
 
-
-
 .modal-text {
     text-align: left; /* Aligne tout le texte à gauche */
     flex: 1; /* Prend l'espace disponible */
@@ -465,20 +463,57 @@ h1 {
     background-color: #e64a19; /* Couleur plus foncée au survol */
 }
 
+.modal-close-btn-red {
+    display: none; /* Cache l'image */
+}
+
+#movie-modal-img-body {
+    display: none; /* Cache l'image */
+}
+
 /* Media query for tablets and smarthphones */
 @media (max-width: 1024px) {
     .modal-header {
         flex-direction: column; /* Empile le texte et l'image en colonne */
-        align-items: center; /* Centre les éléments horizontalement */
+        padding-left: 20px;
+        padding-bottom: 0px;
     }
 
-    .modal-image {
-        align-self: center; /* Centre l'image horizontalement */
-        margin-top: 20px; /* Ajoute un espace au-dessus de l'image */
+    .modal-body {
+        text-align: left; /* S'assure que le contenu reste aligné à gauche */
+        padding-left: 20px;
+
     }
 
-    .modal-text {
-        text-align: center; /* Centre le texte */
+
+    #movie-modal-img-header {
+        display: none; /* Cache l'image */
     }
+
+    #movie-modal-img-body {
+        display: block; /* Display image */
+        width: 100%; /* L'image prendra toute la largeur du conteneur */
+        height: auto; /* Maintient les proportions de l'image */
+        padding-top: 20px;
+    }
+
+    .modal-close-btn {
+        display: none; /* Hide close button */
+    }
+
+    .modal-close-btn-red {
+        display: block;
+        /* Modifie la couleur du SVG de la croix */
+        filter: invert(27%) sepia(51%) saturate(7057%) hue-rotate(355deg) brightness(97%) contrast(115%);
+        opacity: 1;
+    }
+    
+    .modal-close-btn-red:hover {
+        /* Un rouge plus sombre au survol */
+        filter: invert(10%) sepia(83%) saturate(5735%) hue-rotate(358deg) brightness(95%) contrast(114%);
+        opacity: 1;
+    }
+
+
 }
 
