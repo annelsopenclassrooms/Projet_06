@@ -45,14 +45,6 @@ function fetchBestMoviesWithMinVotes(minVotes = 1000000, targetMoviesCount = 6) 
     });
 }
 
-
-
-
-
-
-
-
-
 function fetchBestMoviesByGenreWithMinVotes(genre, minVotes = 1000000, targetMoviesCount = 6) {
     const url = "http://localhost:8000/api/v1/titles";
     const sortBy = "-imdb_score"; // Sorting by IMDb score in descending order
@@ -302,18 +294,6 @@ function loadMoviesByGenre(selectedGenre) {
             });
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,19 +1,19 @@
 header {
     display: flex;
     align-items: center;
-    justify-content: left; /* Centre le contenu horizontalement */
-    margin: 0 auto 20px; /* Centre horizontalement avec `auto` et ajoute une marge en bas */
-    padding: 10px 15px; /* Espacement interne */
-    background-color:#61787F; /* Fond gris clair */
-    color: #ffffff; /* Couleur du texte en noir pour un bon contraste */
-    box-sizing: border-box; /* Inclut les paddings dans la largeur */
-    border: 2px solid #000; /* Ajout d'un cadre noir */
+    justify-content: left; 
+    margin: 0 auto 20px; 
+    padding: 10px 15px;  /* Internal spacing */
+    background-color:#61787F; /* Light gray background */
+    color: #ffffff; 
+    box-sizing: border-box; /* Includes paddings in the width */
+    border: 2px solid #000; /* Adds a black border */
 }
 
 header img {
     height: 150px;
     margin-right: 50px;
-    max-width: 100%; /* Prévention des débordements */
+    max-width: 100%; /* Prevents overflow */
 }
 header h1 {
     font-family: Oswald;
@@ -29,46 +29,56 @@ header h1 {
 
 @media (max-width: 1024px) { /* For tablets */
     header {
-        flex-direction: row; /* Reverse the order: image on the right */
-        align-items: center; /* Vertically align the items */
+        flex-direction: row; 
+        align-items: center; 
     }
     header h1 {
-        font-size: 1.2rem; /* Adjust the font size */
+        font-size: 1.2rem; 
     }
     header img {
-        margin-left: 0px; /* Add space between the title and the image */
-        margin-bottom: 0; /* Remove any bottom margin */
+        margin-left: 0px; 
+        margin-bottom: 0; 
     }
 }
-
-
-
 
 @media (max-width: 768px) {
     header {
-        justify-content: center; /* Centre horizontalement le contenu si Flexbox est utilisé */
-        text-align: center; /* Centrage du texte et des éléments inline-block */
+        justify-content: center; /* Centers content horizontally if Flexbox is used */
+        text-align: center; /* Centers text and inline-block elements */
     }
 
     header h1 {
-        display: none; /* Cache le titre sur les smartphones */
+        display: none;  /* Hides the title on smartphones */
     }
 
     header img {
-        display: block; /* Permet d'appliquer margin: auto */
-        margin: 0 auto; /* Centre l'image horizontalement */
-        height: auto; /* Ajuste la hauteur automatiquement */
-        max-width: 100px; /* Limite la largeur maximale de l'image */
+        display: block; /* Allows applying margin: auto */
+        margin: 0 auto; /* Centers the image horizontally */
+        height: auto; /* Automatically adjusts the height */
+        max-width: 100px; /* Limits the maximum image width */
     }
 }
 
-
 body {
-    font-family: 'Oswald', sans-serif; /* Police principale */
-    width: 50%; /* Limite la largeur du contenu à 80% de l'écran */
-    margin: 0 auto; /* Centre horizontalement le contenu */
-    padding: 0; /* Supprime tout espace par défaut */
-    box-sizing: border-box; /* Inclut les paddings et bordures dans la largeur */
+    font-family: 'Oswald', sans-serif; /* Primary font */
+    width: 50%; /* Limits the content width to 50% of the screen */
+    margin: 0 auto; /* Centers content horizontally */
+    padding: 0; /* Removes default spacing */
+    box-sizing: border-box; /* Includes paddings and borders in the width */
+}
+
+
+@media (max-width: 1024px) { /* For tablets */
+    body {
+        width: 75%; /* Limits the content width to 75% of the screen */
+    }
+}
+
+@media (max-width: 768px) { /* For phones
+     */
+    body {
+        width: 75%; /* Limits the content width to 75% of the screen */
+    }
 }
 
 h1 {
@@ -79,31 +89,29 @@ h1 {
   
 
 .movie-card {
-    display: flex; /* Active Flexbox */
-    flex-direction: row; /* Place .div1 à gauche et .div2 à droite */
-    align-items: center; /* Centre verticalement les éléments */
-    gap: 20px; /* Espace horizontal entre les deux divs */
+    display: flex; /* Enables Flexbox */
+    flex-direction: row; /* Places .div1 on the left and .div2 on the right */
+    align-items: center; /* Vertically centers elements */
+    gap: 20px; /* Horizontal space between the two divs */
     border: 5px solid black;
 }
 
 
-/* Image container */
-
 .div1{
-    max-width: 200px; /* Augmente la taille maximale de l'image */
-    width: 100%; /* S'adapte à son conteneur */
-    height: auto; /* Conserve les proportions */
+    max-width: 200px; /* Increases the maximum image size */
+    width: 100%; /* Adapts to its container */
+    height: auto; /* Maintains proportions */
     padding: 20px;
 
 }
 
-/* Text container */
+
 .div2 {
-    flex: 1; /* Prend toute la largeur restante */
-    padding-left: 10px; /* Ajoute de l'espace intérieur */
-    display: flex; /* Active Flexbox pour organiser le contenu */
-    flex-direction: column; /* Empile les éléments verticalement */
-    gap: 10px; /* Espace entre les éléments (titre, description, bouton) */
+    flex: 1; /* Takes up the remaining width */
+    padding-left: 10px; /* Adds internal space */
+    display: flex; /* Enables Flexbox for content organization */
+    flex-direction: column; /* Stacks elements vertically */
+    gap: 10px; /* Space between elements (title, description, button) */
 
 }
 
@@ -116,22 +124,22 @@ h1 {
 .card-text {
     font-size: 1rem;
     margin-bottom: 20px;
-    padding-right: 20px
+    padding-right: 20px;
 }
 
 .btn {
-    margin-top: auto; /* Positionne le bouton en bas de div2 */
-    margin-right: 20px; /* Ajoute un espace de 20px à droite */
-    margin-bottom: 20px; /* Ajoute un espace de 20px en bas */
-    font-size: 1rem; /* Augmente la taille de la police */
-    align-self: flex-end; /* Positionne le bouton à droite */
-    background-color: #ff0000; /* Fond rouge */
-    color: #ffffff; /* Texte blanc */
-    border: none; /* Supprime les bordures */
-    border-radius: 25px; /* Rend le bouton arrondi */
-    padding: 10px 10px; /* Ajoute plus de padding interne (vertical et horizontal) */
-    cursor: pointer; /* Change le curseur au survol */
-    transition: background-color 0.3s ease; /* Animation sur le changement de couleur */
+    margin-top: auto; /* Positions the button at the bottom of div2 */
+    margin-right: 20px; /* Adds 20px space to the right */
+    margin-bottom: 20px; /* Adds 20px space to the bottom */
+    font-size: 1rem; /* Increases font size */
+    align-self: flex-end; /* Positions the button to the right */
+    background-color: #ff0000; /* Red background */
+    color: #ffffff; /* White text */
+    border: none; /* Removes borders */
+    border-radius: 25px; /* Makes the button rounded */
+    padding: 10px 10px; /* Adds internal padding (vertical and horizontal) */
+    cursor: pointer; /* Changes the cursor on hover */
+    transition: background-color 0.3s ease; /* Animation for color change */
 
 }
 
@@ -145,375 +153,362 @@ h1 {
 /* Media query pour les smartphones */
 @media (max-width: 768px) {
     .movie-card {
-        flex-direction: column; /* Réorganise les éléments en colonne */
-        align-items: center; /* Centre les éléments horizontalement */
-        gap: 0; /* Supprime tout espacement entre les éléments */
+        flex-direction: column; /* Reorganizes the elements into a column layout */
+        align-items: center; /* Centers the elements horizontally */
+        gap: 0; /* Removes any spacing between the elements */
     }
 
     .div1 {
-        max-width: 100%; /* L'image prend toute la largeur du conteneur */
-
-        padding: 0; /* Supprime le padding autour de l'image */
-        box-sizing: border-box; /* Inclut le padding dans la dimension globale */
+        max-width: 100%; /* The image takes the full width of the container */
+        padding: 0; /* Removes padding around the image */
+        box-sizing: border-box; /* Includes padding in the overall dimension */
     }
 
     .div1 img {
-        width: 100%; /* L'image s'adapte à la largeur du conteneur */
-        height: 300px;
-        object-fit: cover; /* Coupe les parties haute et basse pour remplir le conteneur */
-        object-position: center; /* Centre le contenu de l'image (horizontalement et verticalement) */
-        padding: 10px
+        width: 100%; /* The image adapts to the container's width */
+        height: 300px; /* Sets the image height */
+        object-fit: cover; /* Crops the top and bottom parts to fill the container */
+        object-position: center; /* Centers the image content horizontally and vertically */
+        padding: 10px; /* Adds padding around the image */
     }
 
     .div2 {
-        padding: 0 10px; /* Ajoute un peu d'espace horizontal autour du texte */
-        text-align: left; /* Centre le texte pour un meilleur rendu sur mobile */
+        padding: 0 10px; /* Adds some horizontal space around the text */
+        text-align: left; /* Aligns the text to the left for better readability on mobile */
     }
 
     .card-title {
-        font-size: 1.5rem; /* Réduit légèrement la taille du titre sur mobile */
-        margin: 0; /* Supprime toute marge autour du titre */
+        font-size: 1.5rem; /* Slightly reduces the title size on mobile */
+        margin: 0; /* Removes any margin around the title */
     }
 
     .card-text {
-        font-size: 1rem;
-        margin-top: 10px; /* Ajoute un léger espacement seulement en haut de la description */
-        margin-bottom: 10px; /* Réduit l'espacement en bas */
+        font-size: 1rem; /* Sets the font size for the text */
+        margin-top: 10px; /* Adds slight spacing at the top of the description */
+        margin-bottom: 10px; /* Reduces the spacing at the bottom */
     }
 
     .btn {
-        align-self: center; /* Centre le bouton horizontalement */
-        margin: 20px auto 0; /* Ajuste les marges pour un meilleur rendu */
-        margin-bottom: 10px;
+        align-self: center; /* Centers the button horizontally */
+        margin: 20px auto 0; /* Adjusts the margins for a better layout */
+        margin-bottom: 10px; /* Adds space below the button */
     }
 }
 
-/* Styles appliqués à tous les conteneurs de films */
+
+/* Styles applied to movie containers */
 .movie-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Toujours 3 colonnes */
-    grid-template-rows: repeat(2, auto); /* Toujours 2 lignes */
-    grid-gap: 80px; /* Espacement entre les cartes */
+    grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+    grid-template-rows: repeat(2, auto); /* Always 2 rows */
+    grid-gap: 80px; /* Spacing between the cards */
 
-    width: 100%;
+    width: 100%; /* Takes the full width of the parent container */
 
-    box-sizing: border-box;
-
-
+    box-sizing: border-box; /* Includes padding and borders in the element's total width and height */
 }
 
-@media (max-width: 1024px) { /* Réglages pour petits écrans */
-/* Styles appliqués à tous les conteneurs de films */
+
+@media (max-width: 1024px) { /* Adjustments for smaller screens */
+    /* Styles applied to all movie containers */
     .movie-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); 
-        grid-template-rows: repeat(3, auto); 
-        grid-gap: 80px; /* Espacement entre les cartes */
+        grid-template-columns: repeat(2, 1fr); /* Changes to 2 columns */
+        grid-template-rows: repeat(3, auto); /* Changes to 3 rows */
+        grid-gap: 80px; /* Spacing between the cards */
 
-        width: 100%;
+        width: 100%; /* Takes the full width of the parent container */
 
-        box-sizing: border-box;
-
-
+        box-sizing: border-box; /* Includes padding and borders in the element's total width and height */
     }
 }
 
-@media (max-width: 768px) { /* Réglages pour petits écrans */
-    /* Styles appliqués à tous les conteneurs de films */
-        .movie-container {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr); 
-            grid-template-rows: repeat(6, auto); 
-            grid-gap: 50px; /* Espacement entre les cartes */
-    
-            width: 100%;
-    
-            box-sizing: border-box;
-    
-    
-        }
+@media (max-width: 768px) { /* Adjustments for smaller screens */
+    /* Styles applied to all movie containers */
+    .movie-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* Changes to a single column */
+        grid-template-rows: repeat(6, auto); /* Changes to 6 rows */
+        grid-gap: 50px; /* Spacing between the cards */
+        width: 100%; /* Takes the full width of the parent container */
+        box-sizing: border-box; /* Includes padding and borders in the element's total width and height */
     }
+}
 
 
-
-
-
-
-
-/* Style pour chaque carte de film */
+/* Styles for each movie card */
 .movie {
     position: relative;
-    aspect-ratio: 1 / 1;
-    max-width: 1000px;
-    width: 100%;
-    margin: 0 auto;
-
+    aspect-ratio: 1 / 1; /* Ensures a square aspect ratio */
+    max-width: 1000px; /* Limits the maximum width to 1000px */
+    width: 100%; /* Takes up the full width of the container */
+    margin: 0 auto; /* Centers the movie card horizontally */
 }
 
 .movie:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px); /* Slightly lifts the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow effect on hover */
 }
 
 .movie img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100%; /* Image spans the full width of the card */
+    height: 100%; /* Image spans the full height of the card */
+    object-fit: cover; /* Ensures the image covers the card without distortion */
+    display: block; /* Removes any extra space below the image */
 }
 
 .movie-banner {
     position: absolute;
-    top: 20%; /* Keep it higher in the image */
+    top: 20%; /* Positions the banner higher within the image */
     left: 0;
-    width: 100%; /* Exactly match the image width */
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 15px 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    line-height: 1.5;
-    height: 80px;
-
+    width: 100%; /* Matches the full width of the image */
+    background-color: rgba(0, 0, 0, 0.7); /* Adds a semi-transparent black background */
+    padding: 15px 20px; /* Adds inner spacing to the banner */
+    box-sizing: border-box; /* Includes padding in the total dimensions */
+    display: flex; /* Makes the banner a flex container */
+    flex-direction: column; /* Stacks the content vertically */
+    justify-content: space-between; /* Adds space between the content items */
+    line-height: 1.5; /* Adjusts the line height for better readability */
+    height: 80px; /* Sets a fixed height for the banner */
 }
 
+
 .movie-banner h3 {
-    color: #fff;
-    margin: 0;
-    font-size: 0.5rem;
-    align-self: flex-start;
-    line-height: 1.2;
+    color: #fff; /* Sets the text color to white */
+    margin: 0; /* Removes default margin */
+    font-size: 0.5rem; /* Reduces the font size for smaller text */
+    align-self: flex-start; /* Aligns the text to the start of the flex container */
+    line-height: 1.2; /* Adjusts line spacing for better readability */
 }
 
 .movie-details-btn {
-    background-color: #6c6c6c;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    align-self: flex-end;
-    margin-top: auto;
-    font-size: 0.5rem;
+    background-color: #6c6c6c; /* Sets the button's background color to gray */
+    color: #ffffff; /* Sets the text color to white */
+    border: none; /* Removes the default border */
+    border-radius: 5px; /* Adds rounded corners to the button */
+    padding: 5px 5px; /* Adds padding inside the button */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+    align-self: flex-end; /* Aligns the button to the end of the flex container */
+    margin-top: auto; /* Pushes the button to the bottom */
+    font-size: 0.5rem; /* Reduces the font size for a compact look */
 }
 
 .movie-banner button:hover {
-    background-color: #e64a19;
+    background-color: #e64a19; /* Changes the background color to orange on hover */
 }
 
-
-/* Conteneur pour aligner le titre et le menu déroulant */
+/* Container for aligning the title and dropdown menu */
 .dropdown-container {
-    display: flex;
-    align-items: center; /* Aligner verticalement au centre */
-    gap: 20px; /* Espacement entre le titre et le menu déroulant */
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Vertically centers the items */
+    gap: 20px; /* Adds spacing between the title and the dropdown menu */
 }
 
-/* Style pour le titre */
+/* Style for the title */
 .dropdown-container h1 {
-    margin: 0; /* Supprime le margin par défaut */
-    font-size: 20px; /* Taille personnalisée pour s'adapter au menu */
+    margin: 0; /* Removes default margin */
+    font-size: 20px; /* Custom font size to match the dropdown menu */
 }
 
-/* Menu déroulant personnalisé */
+/* Custom dropdown menu */
 .custom-dropdown {
-    position: relative;
-    width: 300px;
+    position: relative; /* Sets relative positioning for dropdown items */
+    width: 300px; /* Sets the width of the dropdown menu */
 }
 
 .dropdown-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: left;
+    width: 100%; /* Full width for the dropdown button */
+    padding: 10px; /* Padding inside the button for better spacing */
+    background-color: #fff; /* White background for the button */
+    border: 1px solid #ccc; /* Add a gray border around the button */
+    border-radius: 5px; /* Round the corners of the button */
+    cursor: pointer; /* Pointer cursor to indicate it's clickable */
+    text-align: left; /* Align text to the left */
 }
 
 .dropdown-options {
-    display: none;
-    position: absolute;
-    width: 100%;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    z-index: 10;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-height: 200px;
-    overflow-y: auto; /* Ajoute un défilement si trop d'options */
+    display: none; /* Initially hide the dropdown options */
+    position: absolute; /* Position the dropdown options absolutely relative to the container */
+    width: 100%; /* Full width for the options list */
+    background-color: #fff; /* White background for the options */
+    border: 1px solid #ccc; /* Add a gray border around the options list */
+    border-radius: 5px; /* Round the corners of the options list */
+    z-index: 10; /* Place the options above other elements if overlapping */
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove padding around the list */
+    margin: 0; /* Remove margin around the list */
+    max-height: 200px; /* Limit the dropdown's height */
+    overflow-y: auto; /* Add vertical scrolling if options exceed the max height */
 }
 
-/* Options avec lignes noires */
 .dropdown-options li {
-    padding: 10px;
-    border-bottom: 3px solid black;
-    cursor: pointer;
+    padding: 10px; /* Padding inside each option for better spacing */
+    border-bottom: 3px solid black; /* Add a thick black border line below each option */
+    cursor: pointer; /* Pointer cursor to indicate it's clickable */
 }
 
-/* Retirer la bordure noire pour le dernier élément */
 .dropdown-options li:last-child {
-    border-bottom: none;
+    border-bottom: none; /* Remove the black border for the last option */
 }
 
-/* Effet au survol */
 .dropdown-options li:hover {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Light gray background on hover */
 }
 
-/* Afficher la liste déroulante active */
 .custom-dropdown.active .dropdown-options {
-    display: block;
+    display: block; /* Show the dropdown options when the custom dropdown is active */
 }
+
+
+
+
+
 
 
 
 
 .modal-dialog.modal-xl {
-    max-width: 50%; /* Limiter la largeur maximale de la modale */
-    border: 5px solid black;
+    max-width: 50%; /* Limit the modal's maximum width */
+    border: 5px solid black; /* Add a thick black border */
 }
 
 .modal-header {
-    display: flex;
-    justify-content: space-between; /* Place le texte à gauche et l'image à droite */
-    align-items: flex-start; /* Aligne les deux éléments en haut */
-    padding: 20px;
-    border-bottom: none; /* Supprime la ligne entre le header et le body */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Place text on the left and image on the right */
+    align-items: flex-start; /* Align elements at the top */
+    padding: 20px; /* Add padding inside the header */
+    border-bottom: none; /* Remove the line between the header and body */
 }
 
 .modal-title {
-    padding-top: 0; /* Supprime le padding */
-    padding-bottom: 0; /* Supprime le padding */
-
+    padding-top: 0; /* Remove top padding */
+    padding-bottom: 0; /* Remove bottom padding */
 }
 
 .modal-text {
-    text-align: left; /* Aligne tout le texte à gauche */
-    flex: 1; /* Prend l'espace disponible */
-
-    margin: 0; /* Supprime les marges par défaut */
-    padding: 0; /* Supprime tout padding éventuel */
-    border-bottom: none; /* Supprime la ligne entre le header et le body */
+    text-align: left; /* Align all text to the left */
+    flex: 1; /* Take up available space */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove any padding */
+    border-bottom: none; /* Remove the line between the header and body */
 }
+
 .spaced-paragraph {
-    margin-top: 30px; /* Ajoute un espace au-dessus */
+    margin-top: 30px; /* Add spacing above */
 }
 
 .modal-text p {
-    margin: 0; /* Supprime les marges autour des paragraphes */
-    padding: 0; /* Supprime tout éventuel padding */
-
+    margin: 0; /* Remove margins around paragraphs */
+    padding: 0; /* Remove any padding */
 }
-.modal-body p {
-    margin: 0; /* Supprime les marges autour des paragraphes */
-    padding: 0; /* Supprime tout éventuel padding */
 
+.modal-body p {
+    margin: 0; /* Remove margins around paragraphs */
+    padding: 0; /* Remove any padding */
 }
 
 .modal-actors {
-    margin-top: 10px; /* Ajoute un espace au-dessus */
-    font-size: 0.8rem;
-    border-bottom: none; /* Supprime la ligne entre le header et le body */
+    margin-top: 10px; /* Add spacing above */
+    font-size: 0.8rem; /* Set a smaller font size */
+    border-bottom: none; /* Remove the line between the header and body */
 }
 
 .modal-image img {
-    width: 200px;
-    height: auto;
-    object-fit: cover;
+    width: 200px; /* Set a fixed width */
+    height: auto; /* Maintain the image proportions */
+    object-fit: cover; /* Ensure the image covers its container */
 }
 
 .modal-content {
-    overflow: hidden;
-    font-size: 1rem;
-    border-bottom: none; /* Supprime la ligne entre le header et le body */
+    overflow: hidden; /* Hide any overflow content */
+    font-size: 1rem; /* Set the font size */
+    border-bottom: none; /* Remove the line between the header and body */
 }
 
 .modal-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Centre verticalement */
-    margin-top: 10px; /* Ajoute un espace au-dessus */
-    border-bottom: none;
-    border-top: none; /* Enlève la bordure supérieure du footer */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center elements horizontally */
+    align-items: center; /* Center elements vertically */
+    margin-top: 10px; /* Add spacing above */
+    border-bottom: none; /* Remove the bottom border */
+    border-top: none; /* Remove the top border */
 }
 
 .modal-body hr {
-    display: none;
+    display: none; /* Hide horizontal rules */
 }
 
 .modal-close-btn {
-    background-color: #ff0000; /* Fond rouge comme le bouton des détails */
-    color: #ffffff; /* Texte blanc */
-    border: none; /* Pas de bordure */
-    border-radius: 25px; /* Coins arrondis */
-    padding: 5px 50px; /* Espacement interne */
-    font-size: 1rem; /* Taille de la police */
-    cursor: pointer; /* Curseur pointeur au survol */
-    transition: background-color 0.3s ease; /* Animation au survol */
-    display: inline-block;
-    margin: 0;  /* Supprime toute marge par défaut */
+    background-color: #ff0000; /* Red background like the details button */
+    color: #ffffff; /* White text */
+    border: none; /* Remove the border */
+    border-radius: 25px; /* Rounded corners */
+    padding: 5px 50px; /* Internal spacing */
+    font-size: 1rem; /* Set the font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Add hover animation */
+    display: inline-block; /* Display inline-block */
+    margin: 0; /* Remove default margins */
 }
 
 .modal-close-btn:hover {
-    background-color: #e64a19; /* Couleur plus foncée au survol */
+    background-color: #e64a19; /* Darker red on hover */
 }
 
 .modal-close-btn-red {
-    display: none; /* Cache l'image */
+    display: none; /* Hide the red close button */
 }
 
 #movie-modal-img-body {
-    display: none; /* Cache l'image */
+    display: none; /* Hide the image */
 }
 
-/* Media query for tablets and smarthphones */
+/* Media query for tablets and smartphones */
 @media (max-width: 1024px) {
     .modal-header {
-        flex-direction: column; /* Empile le texte et l'image en colonne */
-        padding-left: 20px;
-        padding-bottom: 0px;
+        flex-direction: column; /* Stack text and image in a column */
+        padding-left: 20px; /* Add padding to the left */
+        padding-bottom: 0px; /* Remove bottom padding */
     }
 
     .modal-body {
-        text-align: left; /* S'assure que le contenu reste aligné à gauche */
-        padding-left: 20px;
-
+        text-align: left; /* Ensure content remains left-aligned */
+        padding-left: 20px; /* Add padding to the left */
     }
 
-
     #movie-modal-img-header {
-        display: none; /* Cache l'image */
+        display: none; /* Hide the image in the header */
     }
 
     #movie-modal-img-body {
-        display: block; /* Display image */
-        width: 100%; /* L'image prendra toute la largeur du conteneur */
-        height: auto; /* Maintient les proportions de l'image */
-        padding-top: 20px;
+        display: block; /* Display the image */
+        width: 100%; /* Make the image take up the container width */
+        height: auto; /* Maintain image proportions */
+        padding-top: 20px; /* Add spacing above the image */
     }
 
     .modal-close-btn {
-        display: none; /* Hide close button */
+        display: none; /* Hide the close button */
     }
 
     .modal-close-btn-red {
-        display: block;
-        /* Modifie la couleur du SVG de la croix */
-        filter: invert(27%) sepia(51%) saturate(7057%) hue-rotate(355deg) brightness(97%) contrast(115%);
-        opacity: 1;
+        display: block; /* Show the red close button */
+        filter: invert(27%) sepia(51%) saturate(7057%) hue-rotate(355deg) brightness(97%) contrast(115%); /* Adjust SVG color */
+        opacity: 1; /* Make it fully visible */
     }
     
     .modal-close-btn-red:hover {
-        /* Un rouge plus sombre au survol */
-        filter: invert(10%) sepia(83%) saturate(5735%) hue-rotate(358deg) brightness(95%) contrast(114%);
-        opacity: 1;
+        filter: invert(10%) sepia(83%) saturate(5735%) hue-rotate(358deg) brightness(95%) contrast(114%); /* Darker red on hover */
+        opacity: 1; /* Keep it fully visible */
     }
-
-
 }
 
+@media (max-width: 576px) {
+    .modal-dialog {
+        margin: 0 auto; /* Center horizontally */
+    }
+    .modal-content {
+        width: 100%; /* Ensure content takes up the maximum width */
+    }
+}
