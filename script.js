@@ -40,8 +40,7 @@ function fetchBestMoviesWithMinVotes(minVotes = 1000000, targetMoviesCount = 6) 
                     reject(error);
                 });
         }
-
-        fetchNextPage(); // Start fetching the first page
+        fetchNextPage(); // Start fetching the next page
     });
 }
 
@@ -138,8 +137,6 @@ function fetchGenres() {
     });
 }
 
-
-
 function displayFirstMovie(movies) {
     if (movies.length === 0) {
         console.log("No movies to display.");
@@ -177,8 +174,6 @@ function displayFirstMovie(movies) {
             console.error("Error fetching first movie details:", error);
         });
 }
-
-
 
 function displayMovies(movies, containerId) {
     const moviesContainer = document.getElementById(containerId);
@@ -239,10 +234,6 @@ function displayMovies(movies, containerId) {
         });
 }
 
-
-
-
-
 function populateGenreDropdown() {
     const genreList = document.getElementById("genre-list");
     const dropdownButton = document.querySelector(".dropdown-button");
@@ -295,8 +286,6 @@ function loadMoviesByGenre(selectedGenre) {
     }
 }
 
-
-
 function loadAndDisplayMovies() {
     // Fetch movies with the specified minimum votes
     fetchBestMoviesWithMinVotes(1000000, 6)
@@ -329,11 +318,6 @@ function loadAndDisplayMovies() {
             console.error("Error in loadAndDisplayMovies execution:", error);
         });
 }
-
-
-
-
-
 
 function fetchMovieDetails(movieId) {
     const url = `http://localhost:8000/api/v1/titles/${movieId}`;
@@ -398,5 +382,5 @@ document.addEventListener("click", function (event) {
     }
 });
 
-// Charger et afficher les films au chargement de la page
+// Load and display movies when the page loads
 document.addEventListener("DOMContentLoaded", loadAndDisplayMovies);
