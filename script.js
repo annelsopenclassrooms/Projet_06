@@ -1,4 +1,4 @@
-function fetchBestMoviesWithMinVotes(minVotes = 1000000, targetMoviesCount = 6) {
+function fetchBestMoviesWithMinVotes(minVotes = 1000000, targetMoviesCount = 7) {
     const url = "http://localhost:8000/api/v1/titles/";
     const sortBy = "-imdb_score"; // Sorting by IMDb score in descending order
     let nextPageUrl = `${url}?sort_by=${sortBy}`;
@@ -296,10 +296,13 @@ function loadMoviesByGenre(selectedGenre) {
 
 function loadAndDisplayMovies() {
     // Fetch movies with the specified minimum votes
-    fetchBestMoviesWithMinVotes(1000000, 6)
+    fetchBestMoviesWithMinVotes(1000000, 7)
         .then(movies => {
-            // Display the fetched movies
-            displayMovies(movies, "movies-container-1");
+
+            // Remove the first movie from the list
+            const filteredMovies = movies.slice(1);
+            // Display the remaining fetched movies
+            displayMovies(filteredMovies, "movies-container-1");
 
             // Display the first movie
             displayFirstMovie(movies);
