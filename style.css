@@ -195,45 +195,74 @@ h1 {
     }
 }
 
-
-/* Styles applied to movie containers */
+/* Modification of existing styles for movie container */
 .movie-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
-    grid-template-rows: repeat(2, auto); /* Always 2 rows */
-    grid-gap: 80px; /* Spacing between the cards */
-
-    width: 100%; /* Takes the full width of the parent container */
-
-    box-sizing: border-box; /* Includes padding and borders in the element's total width and height */
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 80px;
+    width: 100%;
+    box-sizing: border-box;
+}
+/* Style for the Show More button */
+.show-more-btn {
+    margin: 20px auto;
+    display: none; /* Hidden by default (desktop version) */
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
+.show-more-btn:hover {
+    background-color: #0056b3;
+}
 
-@media (max-width: 1024px) { /* Adjustments for smaller screens */
-    /* Styles applied to all movie containers */
+/* Desktop version (default): displays 6 movies */
+.movie {
+    display: block;
+}
+
+/* Tablet version: displays 4 movies and shows button */
+@media (max-width: 1024px) {
     .movie-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Changes to 2 columns */
-        grid-template-rows: repeat(3, auto); /* Changes to 3 rows */
-        grid-gap: 80px; /* Spacing between the cards */
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .movie:nth-child(n+5) {
+        display: none;
+    }
 
-        width: 100%; /* Takes the full width of the parent container */
-
-        box-sizing: border-box; /* Includes padding and borders in the element's total width and height */
+    .show-more-btn {
+        display: block; /* Show button on tablet version */
     }
 }
 
-@media (max-width: 768px) { /* Adjustments for smaller screens */
-    /* Styles applied to all movie containers */
+/* Mobile version: displays 2 movies and shows button */
+@media (max-width: 768px) {
     .movie-container {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr); /* Changes to a single column */
-        grid-template-rows: repeat(6, auto); /* Changes to 6 rows */
-        grid-gap: 50px; /* Spacing between the cards */
-        width: 100%; /* Takes the full width of the parent container */
-        box-sizing: border-box; /* Includes padding and borders in the element's total width and height */
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .movie:nth-child(n+3) {
+        display: none;
+    }
+
+    .show-more-btn {
+        display: block; /* Show button on mobile version */
     }
 }
+
+/* Class to display all movies when clicking "voir plus" */
+.show-all .movie {
+    display: block !important;
+}
+
+
+
+
 
 
 /* Styles for each movie card */

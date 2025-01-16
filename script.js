@@ -182,7 +182,7 @@ function displayMovies(movies, containerId) {
         return;
     }
 
-    // Clear the container before appending new content
+    // Clear the container
     moviesContainer.innerHTML = "";
 
     // Fetch detailed information for each movie
@@ -190,23 +190,20 @@ function displayMovies(movies, containerId) {
 
     Promise.all(detailPromises)
         .then(detailedMovies => {
-            // Loop through each detailed movie and display it
+            // Diplay movies
             detailedMovies.forEach(movie => {
                 const movieDiv = document.createElement('div');
                 movieDiv.classList.add('movie');
 
                 const movieImage = document.createElement('img');
-                movieImage.src = movie.image_url || "placeholder.jpg"; // Use a placeholder image if none exists
-
-                // Make the image clickable by adding a click event
-                movieImage.classList.add('clickable'); // Add a class for styling (optional)
+                movieImage.src = movie.image_url || "placeholder.jpg";
+                movieImage.classList.add('clickable');
                 movieImage.addEventListener('click', () => {
-                    openMovieModal(movie.id); // Open the modal with movie details
+                    openMovieModal(movie.id);
                 });
 
                 movieDiv.appendChild(movieImage);
 
-                // Create a banner div to contain title and button
                 const movieBanner = document.createElement('div');
                 movieBanner.classList.add('movie-banner');
 
@@ -217,17 +214,28 @@ function displayMovies(movies, containerId) {
                 const detailsButton = document.createElement('button');
                 detailsButton.textContent = 'Details';
                 detailsButton.classList.add('movie-details-btn');
-                detailsButton.setAttribute('data-id', movie.id); // Attach the movie ID to the button
-
-                // Attach click event to open the modal with movie details
+                detailsButton.setAttribute('data-id', movie.id);
                 detailsButton.addEventListener('click', () => {
-                    openMovieModal(movie.id); // Open the modal with movie ID
+                    openMovieModal(movie.id);
                 });
 
                 movieBanner.appendChild(detailsButton);
                 movieDiv.appendChild(movieBanner);
                 moviesContainer.appendChild(movieDiv);
             });
+
+            // Add "Voir plus" button
+            const showMoreBtn = document.createElement('button');
+            showMoreBtn.textContent = 'Voir plus';
+            showMoreBtn.classList.add('show-more-btn');
+            
+            showMoreBtn.addEventListener('click', () => {
+                moviesContainer.classList.add('show-all');
+                showMoreBtn.style.display = 'none';
+            });
+
+            // Add the button after the container
+            moviesContainer.parentNode.insertBefore(showMoreBtn, moviesContainer.nextSibling);
         })
         .catch(error => {
             console.error("Error fetching detailed movie information:", error);
