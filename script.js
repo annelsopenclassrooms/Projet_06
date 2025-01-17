@@ -175,42 +175,36 @@ function displayFirstMovie(movies) {
         });
 }
 
+
+
 function displayMovies(movies, containerId) {
     const moviesContainer = document.getElementById(containerId);
     if (!moviesContainer) {
         console.error(`Movies container with ID '${containerId}' not found.`);
         return;
     }
-
     // Clear the container
     moviesContainer.innerHTML = "";
-
     // Fetch detailed information for each movie
     const detailPromises = movies.map(movie => fetchMovieDetails(movie.id));
-
     Promise.all(detailPromises)
         .then(detailedMovies => {
-            // Diplay movies
+            // Display movies
             detailedMovies.forEach(movie => {
                 const movieDiv = document.createElement('div');
                 movieDiv.classList.add('movie');
-
                 const movieImage = document.createElement('img');
                 movieImage.src = movie.image_url || "placeholder.jpg";
                 movieImage.classList.add('clickable');
                 movieImage.addEventListener('click', () => {
                     openMovieModal(movie.id);
                 });
-
                 movieDiv.appendChild(movieImage);
-
                 const movieBanner = document.createElement('div');
                 movieBanner.classList.add('movie-banner');
-
                 const movieTitle = document.createElement('h3');
                 movieTitle.textContent = movie.original_title || "Title not available";
                 movieBanner.appendChild(movieTitle);
-
                 const detailsButton = document.createElement('button');
                 detailsButton.textContent = 'Details';
                 detailsButton.classList.add('movie-details-btn');
@@ -218,29 +212,54 @@ function displayMovies(movies, containerId) {
                 detailsButton.addEventListener('click', () => {
                     openMovieModal(movie.id);
                 });
-
                 movieBanner.appendChild(detailsButton);
                 movieDiv.appendChild(movieBanner);
                 moviesContainer.appendChild(movieDiv);
             });
 
+            // Create buttons container
+            const buttonsContainer = document.createElement('div');
+            buttonsContainer.classList.add('view-buttons');
+
             // Add "Voir plus" button
             const showMoreBtn = document.createElement('button');
             showMoreBtn.textContent = 'Voir plus';
             showMoreBtn.classList.add('show-more-btn');
-            
+
+            // Add "Voir moins" button
+            const showLessBtn = document.createElement('button');
+            showLessBtn.textContent = 'Voir moins';
+            showLessBtn.classList.add('show-less-btn');
+            showLessBtn.style.display = 'none'; // Initially hidden
+
             showMoreBtn.addEventListener('click', () => {
                 moviesContainer.classList.add('show-all');
                 showMoreBtn.style.display = 'none';
+                showLessBtn.style.display = 'block';
             });
 
-            // Add the button after the container
-            moviesContainer.parentNode.insertBefore(showMoreBtn, moviesContainer.nextSibling);
+            showLessBtn.addEventListener('click', () => {
+                moviesContainer.classList.remove('show-all');
+                showMoreBtn.style.display = 'block';
+                showLessBtn.style.display = 'none';
+            });
+
+            // Add both buttons to the container
+            buttonsContainer.appendChild(showMoreBtn);
+            buttonsContainer.appendChild(showLessBtn);
+
+            // Add the buttons container after the movies container
+            moviesContainer.parentNode.insertBefore(buttonsContainer, moviesContainer.nextSibling);
         })
         .catch(error => {
             console.error("Error fetching detailed movie information:", error);
         });
 }
+
+
+
+
+
 
 function populateGenreDropdown() {
     const genreList = document.getElementById("genre-list");

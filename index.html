@@ -19,12 +19,10 @@
 </head>
 
 <body>
-    <header>
-        <img src="images/logo.png" alt="Logo">
-        <h1>Vidéos à la demande</h1>
-    </header>
+
 
     <!-- modal window -->
+     
     <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -59,47 +57,57 @@
             </div>
         </div>
     </div>
+    <header>
+        <img src="images/logo.png" alt="Logo">
+        <h1>Vidéos à la demande</h1>
+    </header>
+
+
+
+
+<main>
+        <section aria-labelledby="best-movie-section">
+            <h2 id="best-movie-section">Meilleur film</h2>
+            <article class="movie-card">
+                <figure class="div1">
+                    <img id="best-movie-img" class="card-img-top" alt="Best Movie" src="placeholder.jpg" />
+                </figure>
+                <div class="div2">
+                    <h3 id="best-movie-title" class="card-title">Loading...</h3>
+                    <p id="best-movie-description" class="card-text">Fetching movie details...</p>
+                    <button id="best-movie-details" class="btn btn-primary">Détails</button>
+                </div>
+            </article>
+        </section>
+
+        <section aria-labelledby="top-rated-section">
+            <h1 id="top-rated-section">Films les mieux notés</h1>
+            <div id="movies-container-1" class="movie-container"></div>
+        </section>
+
+        <section aria-labelledby="sci-fi-section">
+            <h1 id="sci-fi-section">Science-Fiction</h1>
+            <div id="movies-container-2" class="movie-container"></div>
+        </section>
+
+        <section aria-labelledby="action-section">
+            <h1 id="action-section">Action</h1>
+            <div id="movies-container-3" class="movie-container"></div>
+        </section>
+
+        <section aria-labelledby="genre-section">
+            <h1 id="genre-section">Choisissez un genre</h1>
+            <div class="dropdown-container">
+                <div class="custom-dropdown">
+                    <button class="dropdown-button">-- Sélectionnez un genre --</button>
+                    <ul class="dropdown-options" id="genre-list"></ul>
+                </div>
+            </div>
+            <!-- Container for movies of the selected genre -->
+            <div id="genre-movies-container" class="movie-container"></div>
+        </section>
+    </main>
+
     
-    <div>
-        <h1>Meilleur film</h1>
-    </div>
-        <div class="movie-card">
-            <div class="div1">
-                <img id="best-movie-img" class="card-img-top" alt="Best Movie" src="placeholder.jpg" />
-            </div>
-            <div class="div2">
-                <h2 id="best-movie-title" class="card-title">Loading...</h2>
-                <p id="best-movie-description" class="card-text">Fetching movie details...</p>
-                <button id="best-movie-details" class="btn btn-primary">Details</button>
-            </div>
-        </div>
-
-        </div>
-            <div>
-                <h1>Films les mieux notés</h1>
-            </div>
-        <div id="movies-container-1" class="movie-container"></div>
-
-        <div>
-            <h1>Science Fiction</h1>
-        </div>
-        <div id="movies-container-2" class="movie-container"></div>
-            <div>
-                <h1>Action</h1>
-            </div>
-        <div id="movies-container-3" class="movie-container"></div>
-
-        <div class="dropdown-container">
-            <h1>Choisissez un Genre</h1>
-            <div class="custom-dropdown">
-                <button class="dropdown-button">-- Sélectionnez un genre --</button>
-                <ul class="dropdown-options" id="genre-list"></ul>
-            </div>
-        </div>
-        
-        <!-- Container for movies of the selected genre -->
-        <div id="genre-movies-container" class="movie-container"></div>
-            <!-- Movies will be displayed here -->
-        </div>
      </body>
 </html>

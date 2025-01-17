@@ -1,5 +1,6 @@
 #perso
 tests/
+test/
 .vscode/
 todo.txt
 exports/

@@ -25,8 +25,6 @@ header h1 {
     text-decoration-skip-ink: none;
 }
 
-
-
 @media (max-width: 1024px) { /* For tablets */
     header {
         flex-direction: row; 
@@ -46,11 +44,9 @@ header h1 {
         justify-content: center; /* Centers content horizontally if Flexbox is used */
         text-align: center; /* Centers text and inline-block elements */
     }
-
     header h1 {
         display: none;  /* Hides the title on smartphones */
     }
-
     header img {
         display: block; /* Allows applying margin: auto */
         margin: 0 auto; /* Centers the image horizontally */
@@ -96,7 +92,6 @@ h1 {
     border: 5px solid black;
 }
 
-
 .div1{
     max-width: 200px; /* Increases the maximum image size */
     width: 100%; /* Adapts to its container */
@@ -104,7 +99,6 @@ h1 {
     padding: 20px;
 
 }
-
 
 .div2 {
     flex: 1; /* Takes up the remaining width */
@@ -199,12 +193,13 @@ h1 {
 .movie-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 80px;
+    grid-gap: 50px;
     width: 100%;
     box-sizing: border-box;
 }
 /* Style for the Show More button */
-.show-more-btn {
+.show-more-btn,
+.show-less-btn {
     margin: 20px auto;
     display: none; /* Hidden by default (desktop version) */
     background-color: #ff0000;
@@ -388,14 +383,6 @@ h1 {
 .custom-dropdown.active .dropdown-options {
     display: block; /* Show the dropdown options when the custom dropdown is active */
 }
-
-
-
-
-
-
-
-
 
 .modal-dialog.modal-xl {
     max-width: 50%; /* Limit the modal's maximum width */
